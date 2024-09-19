@@ -1,0 +1,87 @@
+#root {
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
+.app-container {
+  min-width: 1080px;
+  display: flex;
+  column-gap: 2rem;
+}
+
+.app-container .feed-container {
+  width: 50%;
+}
+
+.app-container .feed-container .header-section {
+  height: 100px;
+}
+
+.app-container .feed-container .header-section .status.connected span {
+  color: green;
+}
+
+.app-container .feed-container .header-section .status.not-connected span {
+  color: red;
+}
+
+.app-container .feed-container .feed-section {
+  max-height: 700px;
+  overflow: auto;
+  background-color: antiquewhite;
+  border-radius: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.app-container .feed-container .feed-section .title {
+  position: sticky;
+  top: 0;
+  background-color: antiquewhite;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.app-container .feed-container .feed-section .feed-item {
+  word-break: break-all;
+  margin-bottom: 1rem;
+}
