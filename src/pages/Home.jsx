@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SubscriptionPlan from "./Subscription";
-import logo from '../assets/logos-01.svg';
-import logo3 from '../assets/logo3.jpeg';
+import logo from "../assets/logos-01.svg";
+import logo3 from "../assets/logo3.jpeg";
 // YouTube video component
 const YouTubeVideo = ({ videoId }) => (
   <iframe
@@ -17,27 +17,28 @@ const YouTubeVideo = ({ videoId }) => (
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   const handleGetStarted = () => {
-    const isLogged = JSON.parse(localStorage.getItem('isLogged'));
-    if(isLogged) {
+    const isLogged = JSON.parse(localStorage.getItem("isLogged"));
+    if (isLogged) {
       navigate("/user/dashboard");
-    }
-    else{
+    } else {
       navigate("/login");
     }
-    
   };
 
   return (
     <div className="bg-gray-100 min-h-screen scroll-smooth">
       {/* Landing Section */}
-        <section
-  className="h-screen  text-white flex flex-col justify-center items-center text-center p-8 relative overflow-hidden"
-  style={{ backgroundImage: `url(${logo3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
->
-
-            {/* <img
+      <section
+        className="h-screen  text-white flex flex-col justify-center items-center text-center p-8 relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${logo3})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* <img
               src={logo}
               className="mr-3 ml-0 pl-0 w-48 h-24 justify-self-start object-cover"
               alt="Logo"
@@ -53,8 +54,6 @@ const Home = () => {
         </div>
       </section>
 
-
-
       {/* YouTube Video Section */}
       <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
         <h2 className="text-4xl font-semibold text-center mb-8">
@@ -68,35 +67,46 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Services Section */}
       <section className="py-16 bg-white p-8 rounded-lg shadow-xl transform transition-transform duration-300">
         <h2 className="text-4xl font-semibold text-center mb-8">
-        Our Services
+          Our Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4">Automated Trade Notificationss</h3>
+            <h3 className="text-xl font-bold mb-4">
+              Automated Trade Notificationss
+            </h3>
             <p className="text-gray-600">
-            Seamlessly navigate your trades with our automated notifications, guiding you through every step from entry to exit.
+              Seamlessly navigate your trades with our automated notifications,
+              guiding you through every step from entry to exit.
             </p>
           </div>
           <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
             <h3 className="text-xl font-bold mb-4">Daily Market Insights</h3>
             <p className="text-gray-600">
-            Stay ahead of the curve with our unbiased market updates. Dive into real trends through our in-depth analysis and leverage our 'Trendo Meter' for a comprehensive market perspective.
+              Stay ahead of the curve with our unbiased market updates. Dive
+              into real trends through our in-depth analysis and leverage our
+              'Trendo Meter' for a comprehensive market perspective.
             </p>
           </div>
           <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
             <h3 className="text-xl font-bold mb-4">Derivatives Expertise</h3>
             <p className="text-gray-600">
-            Unlock the power of derivatives analysis with simplified Open Interest (OI) and Put-Call Ratio (PCR) data analytics, enhancing your understanding of market dynamics.
+              Unlock the power of derivatives analysis with simplified Open
+              Interest (OI) and Put-Call Ratio (PCR) data analytics, enhancing
+              your understanding of market dynamics.
             </p>
           </div>
           <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4">Live Strategy Performance</h3>
+            <h3 className="text-xl font-bold mb-4">
+              Live Strategy Performance
+            </h3>
             <p className="text-gray-600">
-            Gain exclusive access to our Live Performance Reports, providing a detailed overview of how our strategies are performing in real-time.
+              Gain exclusive access to our Live Performance Reports, providing a
+              detailed overview of how our strategies are performing in
+              real-time.
             </p>
           </div>
         </div>
@@ -108,7 +118,7 @@ const Home = () => {
         className="py-16 bg-blue-50 p-8 rounded-lg shadow-xl"
       >
         <h2 className="text-4xl font-semibold text-center mb-8">
-          Choose Your Plan
+          Subcription Plan
         </h2>
         <SubscriptionPlan />
       </section>

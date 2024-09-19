@@ -95,7 +95,10 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="hover:text-gray-400">
+                  <Link
+                    to="/termsandconditions"
+                    className="hover:text-gray-400"
+                  >
                     Terms & Conditions
                   </Link>
                 </li>
