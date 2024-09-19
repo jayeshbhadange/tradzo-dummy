@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from '../../../assets/logos-02.svg';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,12 +18,12 @@ function Header() {
 
   return (
     <header className="shadow sticky z-50 top-0 bg-white">
-      <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="/" className="flex items-center">
+      <nav className="border-gray-200 px-4 ml-0 pl-0 lg:px-6 py-2.5">
+        <div className="flex ml-0 pl-0 flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          <Link to="/home" className="flex justify-self-start ml-0 pl-0  items-center">
             <img
-              src="https://media.licdn.com/dms/image/v2/D4D0BAQHrEHElWc8whw/company-logo_200_200/company-logo_200_200/0/1705056868818?e=2147483647&v=beta&t=7_CU_5iFkkhkjjgdCX5gBWUqZ2UCFXZOOZdJTilevJw"
-              className="mr-3 w-20 h-12"
+              src={logo}
+              className="mr-3 ml-0 pl-0 w-48 h-16 justify-self-start object-cover"
               alt="Logo"
             />
           </Link>
