@@ -108,14 +108,14 @@ function Header() {
                   Contact
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <button
                   onClick={handleScrollToSection}
                   className="block py-2 px-3 duration-200 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0"
                 >
                   Pricing
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

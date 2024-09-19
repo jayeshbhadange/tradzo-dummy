@@ -54,6 +54,21 @@ const Home = () => {
       </section>
 
 
+
+      {/* YouTube Video Section */}
+      <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
+        <h2 className="text-4xl font-semibold text-center mb-8">
+          Trading Tips & Strategies
+        </h2>
+        <div className="overflow-x-auto">
+          <div className="flex space-x-6">
+            <YouTubeVideo videoId="BHuFfWPk3iY" />
+            <YouTubeVideo videoId="Xxs6jkjpFlk" />
+            <YouTubeVideo videoId="q12WapUwAQ8" />
+          </div>
+        </div>
+      </section>
+      
       {/* Featured Services Section */}
       <section className="py-16 bg-white p-8 rounded-lg shadow-xl transform transition-transform duration-300">
         <h2 className="text-4xl font-semibold text-center mb-8">
@@ -87,20 +102,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* YouTube Video Section */}
-      <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
-        <h2 className="text-4xl font-semibold text-center mb-8">
-          Trading Tips & Strategies
-        </h2>
-        <div className="overflow-x-auto">
-          <div className="flex space-x-6">
-            <YouTubeVideo videoId="BHuFfWPk3iY" />
-            <YouTubeVideo videoId="Xxs6jkjpFlk" />
-            <YouTubeVideo videoId="q12WapUwAQ8" />
-          </div>
-        </div>
-      </section>
-      
       {/* Subscription Plans Section */}
       <section
         id="subscription"
