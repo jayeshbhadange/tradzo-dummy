@@ -34,11 +34,18 @@ function Header() {
             >
               {isLogged ? "Dashboard" : "Login"}
             </Link>
-            {isLogged && <button onClick={()=>{
-              localStorage.removeItem('isLogged');
-              localStorage.removeItem('user')
-              navigate('/home');
-            }}  className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Logout</button>}
+            {isLogged && (
+              <button
+                onClick={() => {
+                  localStorage.removeItem("isLogged");
+                  localStorage.removeItem("user");
+                  navigate("/home");
+                }}
+                className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              >
+                Logout
+              </button>
+            )}
             <button
               className="text-gray-800 lg:hidden ml-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -71,9 +78,7 @@ function Header() {
                   to="/home"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive
-                        ? "text-orange-700"
-                        : "text-gray-700"
+                      isActive ? "text-orange-700" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                   }
                 >
@@ -85,9 +90,7 @@ function Header() {
                   to="/about"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive
-                        ? "text-orange-700"
-                        : "text-gray-700"
+                      isActive ? "text-orange-700" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                   }
                 >
@@ -99,23 +102,26 @@ function Header() {
                   to="/contact"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive
-                        ? "text-orange-700"
-                        : "text-gray-700"
+                      isActive ? "text-orange-700" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                   }
                 >
                   Contact
                 </NavLink>
               </li>
-              {/* <li>
-                <button
-                  onClick={handleScrollToSection}
-                  className="block py-2 px-3 duration-200 text-gray-700 hover:bg-gray-50 lg:border-0 lg:p-0"
+              {/* Add Disclaimer Link */}
+              <li>
+                <NavLink
+                  to="/disclaimer"
+                  className={({ isActive }) =>
+                    `block py-2 pr-4 pl-3 duration-200 ${
+                      isActive ? "text-orange-700" : "text-gray-700"
+                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                  }
                 >
-                  Pricing
-                </button>
-              </li> */}
+                  Disclaimer
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

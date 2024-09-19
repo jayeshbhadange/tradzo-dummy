@@ -127,10 +127,9 @@ const Home = () => {
             />
             <div>
               <p className="text-gray-700 mb-2">
-                "Tradzo has completely transformed my trading game. The signals
-                are spot on, and the analysis is top-notch."
+                "Amazing calls in Nifty"
               </p>
-              <p className="text-gray-900 font-semibold">- Sarah L.</p>
+              <p className="text-gray-900 font-semibold">- Tushar Arahant.</p>
             </div>
           </div>
           <div className="bg-blue-50 p-6 rounded-lg shadow-md flex items-center transition-transform transform hover:scale-105">
@@ -141,10 +140,9 @@ const Home = () => {
             />
             <div>
               <p className="text-gray-700 mb-2">
-                "I love how easy it is to manage my portfolio with Tradzo.
-                Highly recommended!"
+                "Market Impulse is very helpful."
               </p>
-              <p className="text-gray-900 font-semibold">- John D.</p>
+              <p className="text-gray-900 font-semibold">- Prashant Vaghela.</p>
             </div>
           </div>
           <div className="bg-blue-50 p-6 rounded-lg shadow-md flex items-center transition-transform transform hover:scale-105">
@@ -155,10 +153,9 @@ const Home = () => {
             />
             <div>
               <p className="text-gray-700 mb-2">
-                "The daily signals have really helped me make profitable trades.
-                A must-have for any trader."
+                "Good trades, & they don't give unnecessary trades."
               </p>
-              <p className="text-gray-900 font-semibold">- Michael B.</p>
+              <p className="text-gray-900 font-semibold">- Hardik Roy.</p>
             </div>
           </div>
         </div>
