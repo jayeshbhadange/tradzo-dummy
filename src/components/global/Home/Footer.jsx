@@ -20,7 +20,7 @@ function Footer() {
               <h2 className="text-lg font-semibold mb-4">Resources</h2>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="hover:text-gray-400">
+                  <Link to="/home" className="hover:text-gray-400">
                     Home
                   </Link>
                 </li>
@@ -29,16 +29,7 @@ function Footer() {
                     About
                   </Link>
                 </li>
-                <li>
-                  <Link to="/career" className="hover:text-gray-400">
-                    Career
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/blog" className="hover:text-gray-400">
-                    Blog
-                  </Link>
-                </li>
+
               </ul>
             </div>
             <div>
@@ -90,7 +81,7 @@ function Footer() {
               <h2 className="text-lg font-semibold mb-4">Legal</h2>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/privacy-policy" className="hover:text-gray-400">
+                  <Link to="/disclaimer" className="hover:text-gray-400">
                     Privacy Policy
                   </Link>
                 </li>
@@ -113,15 +104,11 @@ function Footer() {
               <h2 className="text-lg font-semibold mb-4">Company</h2>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/about-us" className="hover:text-gray-400">
+                  <Link to="/about" className="hover:text-gray-400">
                     About Us
                   </Link>
                 </li>
-                <li>
-                  <Link to="/careers" className="hover:text-gray-400">
-                    Careers
-                  </Link>
-                </li>
+
                 <li>
                   <Link to="/offices" className="hover:text-gray-400">
                     Our Offices
