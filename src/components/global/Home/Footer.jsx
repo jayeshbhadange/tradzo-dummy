@@ -95,7 +95,10 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/terms" className="hover:text-gray-400">
+                  <Link
+                    to="/terms"
+                    className="hover:text-gray-400"
+                  >
                     Terms & Conditions
                   </Link>
                 </li>
@@ -128,23 +131,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="mb-8">
-          <h2 className="text-lg font-semibold mb-4">Newsletter Signup</h2>
-          <form className="flex flex-col sm:flex-row sm:space-x-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-2 mb-4 sm:mb-0 rounded-md border border-gray-700 bg-gray-800 text-white"
-              required
-            />
-            <button
-              type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+
         <hr className="border-gray-700 mb-6" />
         <ul className="flex justify-center space-x-4">
           <li className="relative group">

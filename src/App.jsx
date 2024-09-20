@@ -9,6 +9,7 @@ import HomeLayout from './components/global/Home/HomeLayout'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Disclaimer from './pages/Disclaimer'
+import TermsAndConditions from './pages/TermsAndConditions'
 
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
       <Route path="*" element={<Missing />} />
 
 
-      <Route path='/' element={<HomeLayout/>}>
+      <Route  element={<HomeLayout/>}>
         <Route path='home' element={<Home/>} />
         <Route path='about' element={<About/>} />
         <Route path='contact' element={<Contact/>} />
         <Route path='disclaimer' element={<Disclaimer/>} />
+        <Route path='terms' element={<TermsAndConditions/>}/>
       </Route>
 
       

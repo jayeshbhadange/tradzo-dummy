@@ -108,11 +108,10 @@ const Home = () => {
         className="py-16 bg-blue-50 p-8 rounded-lg shadow-xl"
       >
         <h2 className="text-4xl font-semibold text-center mb-8">
-          Choose Your Plan
+          Subcription Plan
         </h2>
         <SubscriptionPlan />
       </section>
-
       {/* Testimonials Section */}
       <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
         <h2 className="text-4xl font-semibold text-center mb-8">
