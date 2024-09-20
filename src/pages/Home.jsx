@@ -56,7 +56,7 @@ const Home = () => {
 
 
       {/* YouTube Video Section */}
-      <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
+      {/* <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
         <h2 className="text-4xl font-semibold text-center mb-8">
           Trading Tips & Strategies
         </h2>
@@ -68,7 +68,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+       */}
       {/* Featured Services Section */}
       <section className="py-16 bg-white p-8 rounded-lg shadow-xl transform transition-transform duration-300">
         <h2 className="text-4xl font-semibold text-center mb-8">
