@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from '../../../assets/logos-02.svg';
+import logo from "../../../assets/logos-02.svg";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,10 @@ function Header() {
     <header className="shadow sticky z-50 top-0 bg-white">
       <nav className="border-gray-200 px-4 ml-0 pl-0 lg:px-6 py-2.5">
         <div className="flex ml-0 pl-0 flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="/home" className="flex justify-self-start ml-0 pl-0  items-center">
+          <Link
+            to="/home"
+            className="flex justify-self-start ml-0 pl-0  items-center"
+          >
             <img
               src={logo}
               className="mr-3 ml-0 pl-0 w-48 h-16 justify-self-start object-cover"
@@ -28,12 +31,12 @@ function Header() {
             />
           </Link>
           <div className="flex items-center lg:order-2">
-            <Link
+            {/* <Link
               to={isLogged ? "/user" : "/login"}
               className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
             >
               {isLogged ? "Dashboard" : "Login"}
-            </Link>
+            </Link> */}
             {isLogged && (
               <button
                 onClick={() => {

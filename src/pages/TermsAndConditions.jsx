@@ -215,7 +215,7 @@ const TermsAndConditions = () => {
         and Associate Companies.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2 className="text-2xl font-semibold mb-4 pt-4">
         3. Content in the Services
       </h2>
       <p className="mb-4">
@@ -319,7 +319,7 @@ const TermsAndConditions = () => {
         </li>
       </ol>
 
-      <h2 className="text-2xl font-semibold mb-4">4. User Obligations</h2>
+      <h2 className="text-2xl font-semibold mb-4 pt-4">4. User Obligations</h2>
 
       <p className="mb-4">The user undertakes to:</p>
 
@@ -390,7 +390,7 @@ const TermsAndConditions = () => {
         </li>
       </ol>
 
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2 className="text-2xl font-semibold mb-4 pt-4">
         5. Intellectual Property Rights
       </h2>
       <p className="mb-4">
@@ -407,7 +407,7 @@ const TermsAndConditions = () => {
         such information without our prior written consent.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2 className="text-2xl font-semibold mb-4 pt-4">
         6. Exclusion of Warranties
       </h2>
 
@@ -478,7 +478,7 @@ const TermsAndConditions = () => {
         </li>
       </ol>
 
-      <h2 className="text-2xl font-semibold mb-4">7. Miscellaneous</h2>
+      <h2 className="text-2xl font-semibold mb-4 pt-4">7. Miscellaneous</h2>
       <ol className="list-alpha list-inside mb-4 space-y-4">
         <li>
           In order to provide the Services and access to the Platform, the

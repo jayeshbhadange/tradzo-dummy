@@ -1,26 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/logos-01.svg";
 
 function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-8">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:justify-between mb-8">
+        {/* Logo and Intro */}
+        <div className="flex flex-col md:flex-row md:justify-between items-center text-center mb-8">
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="flex items-center">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4D0BAQHrEHElWc8whw/company-logo_200_200/company-logo_200_200/0/1705056868818?e=2147483647&v=beta&t=7_CU_5iFkkhkjjgdCX5gBWUqZ2UCFXZOOZdJTilevJw"
-                className="h-12 w-20"
-                alt="Logo"
-              />
+            <Link to="/" className="flex justify-center mx-auto">
+              <img src={logo} className="h-40 w-auto" alt="Logo" />
             </Link>
+            <p className="mt-4 text-sm max-w-md">
+              Tradzo Technologies creates platforms & investment products to
+              invest in Indian Equities with more Transparency & Professional
+              Approach. Our strategies are curated to provide actionable
+              research and trades in Equities & Derivatives.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-6">
+
+          {/* Resource Links */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
             <div>
               <h2 className="text-lg font-semibold mb-4">Resources</h2>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/home" className="hover:text-gray-400">
+                  <Link to="/home" className="hover:text-gray-400 link-padding">
                     Home
                   </Link>
                 </li>
@@ -29,15 +35,16 @@ function Footer() {
                     About
                   </Link>
                 </li>
-
               </ul>
             </div>
+
+            {/* Follow Us Links */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Follow us</h2>
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://facebook.com"
+                    href="https://m.facebook.com/HiTradzo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-gray-400"
@@ -47,7 +54,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com"
+                    href="https://x.com/hitradzo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-gray-400"
@@ -57,7 +64,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://in.linkedin.com/company/tradzo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-gray-400"
@@ -67,7 +74,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/hitradzo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-gray-400"
@@ -77,6 +84,8 @@ function Footer() {
                 </li>
               </ul>
             </div>
+
+            {/* Legal Links */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Legal</h2>
               <ul className="space-y-2">
@@ -86,11 +95,13 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/terms"
-                    className="hover:text-gray-400"
-                  >
+                  <Link to="/terms" className="hover:text-gray-400">
                     Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/disclaimer" className="hover:text-gray-400">
+                    Disclaimer
                   </Link>
                 </li>
                 <li>
@@ -100,6 +111,8 @@ function Footer() {
                 </li>
               </ul>
             </div>
+
+            {/* Company Links */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Company</h2>
               <ul className="space-y-2">
@@ -120,81 +133,177 @@ function Footer() {
         </div>
 
         <hr className="border-gray-700 mb-6" />
+
+        {/* Social Media Links */}
         <ul className="flex justify-center space-x-4">
+          {/* Facebook Icon */}
           <li className="relative group">
             <a
-              href="https://facebook.com"
+              href="https://m.facebook.com/HiTradzo"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 bg-white text-blue-600 rounded-full shadow-md transition-transform transform hover:scale-110"
             >
               <svg
-                viewBox="0 0 320 512"
-                height="1.2em"
-                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 48 48"
               >
-                <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                <path
+                  fill="#2aa4f4"
+                  d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4z"
+                />
+                <path
+                  fill="#fff"
+                  d="M26.707 29.301h5.176l.813-5.258h-5.989v-2.874c0-2.184.714-4.121 2.757-4.121h3.283v-5.464c-.577-.078-1.797-.248-4.102-.248-4.814 0-7.636 2.542-7.636 8.334v3.498H16.06v5.258h4.948v14.452C21.988 43.9 22.981 44 24 44c.921 0 1.82-.084 2.707-.204V29.301z"
+                />
               </svg>
             </a>
             <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
               Facebook
             </span>
           </li>
+
+          {/* Youtube Icon */}
           <li className="relative group">
             <a
-              href="https://twitter.com"
+              href="https://youtube.com/@hitradzo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-10 h-10 bg-white text-red-600 rounded-full shadow-md transition-transform transform hover:scale-110"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  fill="#FF3D00"
+                  d="M43.2 33.9c-.4 2.1-2.1 3.7-4.2 4-3.3.5-8.8 1.1-15 1.1-6.1 0-11.6-.6-15-1.1-2.1-.3-3.8-1.9-4.2-4C4.4 31.6 4 28.2 4 24c0-4.2.4-7.6.8-9.9.4-2.1 2.1-3.7 4.2-4 3.3-.5 8.8-1.1 15-1.1s11.6.6 15 1.1c2.1.3 3.8 1.9 4.2 4 .4 2.3.9 5.7.9 9.9-.4 4.2-.8 7.6-1.2 9.9z"
+                />
+                <path fill="#FFF" d="M20 31V17l12 7z" />
+              </svg>
+            </a>
+            <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
+              YouTube
+            </span>
+          </li>
+
+          {/* Twitter Icon */}
+          <li className="relative group">
+            <a
+              href="https://x.com/hitradzo"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 bg-white text-blue-400 rounded-full shadow-md transition-transform transform hover:scale-110"
             >
               <svg
-                height="1.8em"
-                fill="currentColor"
-                viewBox="0 0 48 48"
                 xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 48 48"
               >
-                <path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path>
+                <path
+                  fill="#03A9F4"
+                  d="M42 12.3c-1.4.6-2.9 1-4.4 1.2 1.6-1 2.8-2.6 3.4-4.5-1.5.9-3.2 1.5-4.9 1.9-1.4-1.5-3.4-2.4-5.6-2.4-4.3 0-7.8 3.6-7.8 7.8 0 .6.1 1.3.2 1.8-6.5-.3-12.2-3.4-16-8.1-.7 1.2-1 2.5-1 4 0 2.7 1.4 5 3.4 6.4-1.3-.1-2.5-.4-3.6-.9v.1c0 3.8 2.7 6.9 6.3 7.7-.7.2-1.5.2-2.2.2-.5 0-1.1 0-1.6-.1 1.1 3.3 4.2 5.6 7.8 5.7-2.9 2.2-6.6 3.5-10.5 3.5-.7 0-1.5 0-2.2-.1 3.7 2.4 8 3.8 12.7 3.8 15.2 0 23.5-12.5 23.5-23.5 0-.4 0-.7 0-1.1 1.7-1.1 3.2-2.6 4.3-4.2z"
+                />
               </svg>
             </a>
             <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
               Twitter
             </span>
           </li>
+
+          {/* LinkedIn Icon */}
           <li className="relative group">
             <a
-              href="https://linkedin.com"
+              href="https://in.linkedin.com/company/tradzo"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 bg-white text-blue-700 rounded-full shadow-md transition-transform transform hover:scale-110"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                height="1.8em"
+                width="24"
+                height="24"
                 viewBox="0 0 48 48"
               >
-                <path d="M42,42H32.2v-12.8c0-3.067-0.06-7.012-4.272-7.012c-4.274,0-4.927,3.34-4.927,6.8V42h-9.8V18.044h9.408v3.278h0.136c1.31-2.478,4.516-5.088,9.3-5.088c9.94,0,11.773,6.44,11.773,14.816V42z M9,15.14c-3.2,0-5.8-2.598-5.8-5.8s2.6-5.8,5.8-5.8c3.2,0,5.8,2.598,5.8,5.8S12.2,15.14,9,15.14z M14.8,42H3.2V18.044h11.6V42z"></path>
+                <path
+                  fill="#0288D1"
+                  d="M42 4H6c-1.1 0-2 .9-2 2v36c0 1.1.9 2 2 2h36c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"
+                />
+                <path
+                  fill="#FFF"
+                  d="M12 19h5v18h-5V19zm2.5-8c1.6 0 2.5 1.1 2.5 2.5S16.1 16 14.5 16 12 14.9 12 13.5 13.4 11 14.5 11zm6 8h5v2.4h.1c.7-1.2 2.3-2.5 4.7-2.5 5 0 5.9 3.3 5.9 7.7V37h-5v-9.5c0-2.2-.8-3.7-2.8-3.7-2.1 0-3.2 1.5-3.2 3.7V37h-5V19z"
+                />
               </svg>
             </a>
             <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
               LinkedIn
             </span>
           </li>
+
+          {/* Instagram Icon */}
           <li className="relative group">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/hitradzo"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-white text-pink-600 rounded-full shadow-md transition-transform transform hover:scale-110"
+              className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-md transition-transform transform hover:scale-110"
             >
               <svg
-                viewBox="0 0 448 512"
-                height="1.8em"
-                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="24"
+                height="24"
+                viewBox="0 0 48 48"
               >
-                <path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71,0c14.08,0,25.51,11.43,25.51,25.51s-11.43,25.51-25.51,25.51-25.51-11.43-25.51-25.51S334.63,202.66,348.71,202.66Zm76.07,25.51c0-46.5-9.54-87.72-28.3-106.48-18.76-18.76-59.98-28.3-106.48-28.3H158c-46.5,0-87.72,9.54-106.48,28.3-18.76,18.76-28.3,59.98-28.3,106.48V354c0,46.5,9.54,87.72,28.3,106.48,18.76,18.76,59.98,28.3,106.48,28.3h136c46.5,0,87.72-9.54,106.48-28.3,18.76-18.76,28.3-59.98,28.3-106.48ZM224,338.66A82.34,82.34,0,1,1,306.34,256,82.36,82.36,0,0,1,224,338.66ZM368,174.54A17.14,17.14,0,1,1,385.14,157.4,17.14,17.14,0,0,1,368,174.54ZM384,384H64V256H64V128H128v12.62a153.35,153.35,0,0,0-20.18-2.32H130.66c3.45,0,6.87.28,10.24.63,3.62.38,7.22,1.13,10.82,1.99a63.93,63.93,0,0,0,11.8,2.56c3.32.66,6.64,1.35,9.95,2.08q6.44,1.45,12.85,3.36c2.83,0.79,5.66,1.68,8.47,2.66,8.46,2.8,16.77,6.38,24.83,10.74a88.42,88.42,0,0,1,10.66,6.19A80.43,80.43,0,0,1,232,181.4c6.6,4.21,13.04,8.81,19.3,13.75,5.5,4.32,11.13,8.88,16.83,13.38a123.06,123.06,0,0,1,19.36,17.1,75.07,75.07,0,0,0,13.49,13.95c5.58,4.65,11.25,9.17,17.05,13.33a139.18,139.18,0,0,1,18.91,16.9,88.46,88.46,0,0,0,7.29,6.68,98.35,98.35,0,0,0,5.38,4.48c1.8,1.47,3.63,2.89,5.48,4.27q4.62,3.51,9.35,7a146.45,146.45,0,0,0,8.93,6.5q5.34,3.9,10.76,7.6,10.12,6.95,20.44,13.41,9.82,6.24,20.08,12.05a143.06,143.06,0,0,0,12.93,5.94c3.89,1.41,7.79,2.69,11.7,3.88,0.78.23,1.58.43,2.36.63,1.22.32,2.43.63,3.66.92.67.17,1.33.35,2,.52,2.3.56,4.63,1.07,7,1.52q7.71,1.44,15.55,2.48c5.83.8,11.73,1.41,17.64,1.9,1.95.15,3.92.28,5.89.36,8.94.33,18,0,26.92-.95,5.68-.62,11.38-1.49,17.05-2.48A240.54,240.54,0,0,0,384,384Z"></path>
+                <radialGradient
+                  id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1"
+                  cx="19.38"
+                  cy="42.035"
+                  r="44.899"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stopColor="#fd5" />
+                  <stop offset=".328" stopColor="#ff543f" />
+                  <stop offset=".348" stopColor="#fc5245" />
+                  <stop offset=".504" stopColor="#e64771" />
+                  <stop offset=".643" stopColor="#d53e91" />
+                  <stop offset=".761" stopColor="#cc39a4" />
+                  <stop offset=".841" stopColor="#c837ab" />
+                </radialGradient>
+                <path
+                  fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
+                  d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20C42.014,38.383,38.417,41.986,34.017,41.99z"
+                />
+                <radialGradient
+                  id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2"
+                  cx="11.786"
+                  cy="5.54"
+                  r="29.813"
+                  gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stopColor="#4168c9" />
+                  <stop offset=".999" stopColor="#4168c9" stopOpacity="0" />
+                </radialGradient>
+                <path
+                  fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
+                  d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20C42.014,38.383,38.417,41.986,34.017,41.99z"
+                />
+                <path
+                  fill="#fff"
+                  d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"
+                />
+                <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                <path
+                  fill="#fff"
+                  d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
+                />
               </svg>
             </a>
             <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">

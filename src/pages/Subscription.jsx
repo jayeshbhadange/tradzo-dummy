@@ -43,7 +43,7 @@ const SubscriptionPlan = () => {
             <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
             <p className="text-3xl font-bold mb-4">{plan.price}</p>
             <p className="text-sm mb-6">{plan.description}</p>
-            <button
+            {/* <button
               className={`w-full py-2 rounded-lg transition-colors duration-300 ${
                 plan.active
                   ? "bg-gray-300 text-gray-600 cursor-not-allowed"
@@ -52,7 +52,7 @@ const SubscriptionPlan = () => {
               disabled={plan.active}
             >
               {plan.buttonText}
-            </button>
+            </button> */}
           </div>
         ))}
       </div>
