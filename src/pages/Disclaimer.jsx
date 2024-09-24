@@ -15,7 +15,7 @@ function Disclaimer() {
             <li>
               <p>Mr. Harsh Patel, CFA L2</p>
               <p>
-                <a href="mailto:harsh@tradzo.in" className="text-blue-400">
+                <a href="mailto:harsh@tradzo.in" className="text-blue-700">
                   harsh@tradzo.in
                 </a>
                 <br />
@@ -27,7 +27,7 @@ function Disclaimer() {
               <p>
                 <a
                   href="mailto:shweta.patel@tradzo.in"
-                  className="text-blue-400"
+                  className="text-blue-700"
                 >
                   shweta.patel@tradzo.in
                 </a>
@@ -67,11 +67,14 @@ function Disclaimer() {
           has our certificate of registration been cancelled by SEBI at any
           point of time.
         </p>
-        We offer our research services to clients as well as our prospects. This
-        document is not for public distribution and has been furnished to you
-        solely for your information and must not be reproduced or redistributed
-        to any other person. Persons into whose possession this document may
-        come are required to observe these restrictions.
+
+        <p>
+          We offer our research services to clients as well as our prospects.
+          This document is not for public distribution and has been furnished to
+          you solely for your information and must not be reproduced or
+          redistributed to any other person. Persons into whose possession this
+          document may come are required to observe these restrictions.
+        </p>
         {/* Liability Disclaimer */}
         <p>
           This material is for the personal information of the authorized
@@ -226,14 +229,14 @@ function Disclaimer() {
           "A graph of daily closing prices of securities is available at{" "}
           <a
             href="https://www.nseindia.com/ChartApp/install/charts/mainpage.jsp"
-            className="text-blue-400"
+            className="text-blue-700"
           >
             https://www.nseindia.com/ChartApp/install/charts/mainpage.jsp
           </a>
-          , and{" "}
+          {""} and{" "}
           <a
             href="http://economictimes.indiatimes.com/markets/stocks/stock-quotes"
-            className="text-blue-400"
+            className="text-blue-700"
           >
             http://economictimes.indiatimes.com/markets/stocks/stock-quotes
           </a>
@@ -260,13 +263,17 @@ function Disclaimer() {
           Derivatives are a sophisticated investment device. The investor is
           requested to take into consideration all the risk factors before
           actually trading in derivative contracts. Compliance Officer Details:
-          Mrs. Shweta Patel. Call: 079 - 4039 1464, or Email: care@tradzo.in
+          Mrs. Shweta Patel. Call: 079 - 4039 1464, or Email:{" "}
+          <a href="mailto:care@tradzo.in" className="text-blue-700">
+            care@tradzo.in
+          </a>
+          .
         </p>
         <p>
           Tradzo Technologies Private Limited. Registered Office: A-416 SUMEL11,
           NAMASTE CIRCLE, SHAHIBAUG, AHMEDABAD, GUJARAT 380004. CIN: , Telephone
           No.: +079 40391464. Website:{" "}
-          <a href="www.tradzo.in" className="text-blue-400">
+          <a href="www.tradzo.in" className="text-blue-700">
             www.tradzo.in
           </a>
           . Correspondence Address: A-416 SUMEL11, NAMASTE CIRCLE, SHAHIBAUG,
@@ -276,43 +283,62 @@ function Disclaimer() {
         <p>
           In case you require any clarification or have any query/concern,
           kindly write to us at{" "}
-          <a href="mailto:care@tradzo.in" className="text-blue-400">
+          <a href="mailto:care@tradzo.in" className="text-blue-700">
             care@tradzo.in
           </a>
           . For grievances, contact{" "}
-          <a href="mailto:shweta.patel@tradzo.in" className="text-blue-400">
+          <a href="mailto:shweta.patel@tradzo.in" className="text-blue-700">
             shweta.patel@tradzo.in
           </a>
           . For escalation, contact{" "}
-          <a href="mailto:harsh@tradzo.in" className="text-blue-400">
+          <a href="mailto:harsh@tradzo.in" className="text-blue-700">
             harsh@tradzo.in
           </a>
           .
         </p>
         {/* Investor Complaints */}
         <p>
-          Investor complaints can be lodged with SEBI at{" "}
+          In absence of response/complaint not addressed to your satisfaction,
+          you may lodge a complaint with SEBI at {""}
           <a
             href="https://scores.gov.in/scores/Welcome.html"
-            className="text-blue-400"
+            className="text-blue-700"
           >
-            SCORES
+            https://scores.gov.in/scores/Welcome.html
           </a>
-          or through the Exchange at
+          {""} or Exchange at {""}
           <a
             href="https://investorhelpline.nseindia.com/NICEPLUS/"
-            className="text-blue-400"
+            className="text-blue-700"
           >
-            {" "}
-            NSE Helpdesk
+            https://investorhelpline.nseindia.com/NICEPLUS/
           </a>
-          ,
+          , {""}
           <a
             href="https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx"
-            className="text-blue-400"
+            className="text-blue-700"
           >
-            {" "}
-            BSE Helpdesk
+            https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx
+          </a>
+          . Investor Service Centre | National Commodity & Derivatives Exchange
+          Limited (ncdex.com), {""}
+          <a href="https://igrs.mcxindia.com/" className="text-blue-700">
+            https://igrs.mcxindia.com/
+          </a>
+          . Please quote your Service Ticket/Complaint Ref No. while raising
+          your complaint at SEBI SCORES/Exchange portal or Depository at {""}
+          <a
+            href="https://www.epass.nsdl.com/complaints/websitecomplaints.aspx"
+            className="text-blue-700"
+          >
+            https://www.epass.nsdl.com/complaints/websitecomplaints.aspx
+          </a>
+          {""} and {""}
+          <a
+            href="https://www.cdslindia.com/Footer/grievances"
+            className="text-blue-700"
+          >
+            https://www.cdslindia.com/Footer/grievances
           </a>
           .
         </p>
