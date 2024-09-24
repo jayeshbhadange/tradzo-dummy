@@ -32,13 +32,22 @@ const Home = () => {
     <div className="bg-gray-100 min-h-screen scroll-smooth">
       {/* Landing Section */}
       <section
-        className="h-screen text-white flex flex-col justify-center items-center text-center p-8 relative overflow-hidden"
+        className="custom-small-height h-screen sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] text-white flex flex-col justify-center items-center text-center p-8 relative overflow-hidden"
         style={{
           backgroundImage: `url(${logo3})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <style jsx>
+          {`
+            @media (max-width: 639px) {
+              .custom-small-height {
+                height: 40vh;
+              }
+            }
+          `}
+        </style>
         {/* <img
               src={logo}
               className="mr-3 ml-0 pl-0 w-48 h-24 justify-self-start object-cover"
@@ -233,7 +242,11 @@ const Home = () => {
         id="subscription"
         className="py-16 bg-blue-50 p-8 rounded-lg shadow-xl"
       >
-        <h2 className="text-4xl font-semibold text-center mb-8">
+        <p className="py-20 text-center text-2xl italic font-bold text-blue-800">
+          "We are awaiting SEBI Approval to launch our Subscription services,
+          current pricing plans are for representation only."
+        </p>
+        <h2 className="text-4xl font-semibold text-center mb-10">
           Subcription Plan
         </h2>
         <SubscriptionPlan />
@@ -261,10 +274,10 @@ const Home = () => {
           ].map((testimonial, index) => (
             <div
               key={index}
-              className="relative group h-[16em] w-[15em] bg-white rounded-lg overflow-hidden p-4 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col p-4"
+              className="relative group h-[14em] w-[15em] bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col p-4"
             >
               <div className="circle absolute h-[4em] w-[4em] -top-[2em] -right-[2em] rounded-full bg-[#FF5800] group-hover:scale-[800%] duration-500 z-[-1]"></div>
-              <div className="flex flex-col items-center justify-center mb-4">
+              <div className="pt-6 flex flex-col items-center justify-center mb-4">
                 {/* Stars */}
                 <div className="flex gap-1 text-yellow-400 mb-2">
                   {[...Array(5)].map((_, i) => (
