@@ -3,19 +3,22 @@ import React from "react";
 function Disclaimer() {
   return (
     <div className="w-full mx-auto px-4 sm:px-6 bg-gray-100 lg:px-8 py-10 text-black">
-      <h1 className="text-3xl font-bold mb-6 text-center  sm:text-left">
+      <h1 className="text-4xl font-bold mb-8 text-center  sm:text-left">
         Disclaimer/Disclosures
       </h1>
 
-      <div className="space-y-6 text-justify">
+      <div className="space-y-5 text-justify">
         {/* Research Team Section */}
         <div>
-          <p className="font-semibold text-lg">RESEARCH TEAM</p>
-          <ul className="space-y-1">
+          <p className="font-semibold text-2xl mb-4">RESEARCH TEAM</p>
+          <ul className="space-y-3">
             <li>
-              <p>Mr. Harsh Patel, CFA L2</p>
+              <p className="font-medium">Mr. Harsh Patel, CFA L2</p>
               <p>
-                <a href="mailto:harsh@tradzo.in" className="text-blue-700">
+                <a
+                  href="mailto:harsh@tradzo.in"
+                  className="text-blue-600 hover:text-blue-800"
+                >
                   harsh@tradzo.in
                 </a>
                 <br />
@@ -23,11 +26,13 @@ function Disclaimer() {
               </p>
             </li>
             <li>
-              <p>Mrs. Shweta Patel, PGDM in Banking & Finance</p>
+              <p className="font-medium">
+                Mrs. Shweta Patel, PGDM in Banking & Finance
+              </p>
               <p>
                 <a
                   href="mailto:shweta.patel@tradzo.in"
-                  className="text-blue-700"
+                  className="text-blue-600 hover:text-blue-800"
                 >
                   shweta.patel@tradzo.in
                 </a>
