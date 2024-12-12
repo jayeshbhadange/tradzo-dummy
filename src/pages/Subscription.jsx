@@ -3,61 +3,132 @@ import React from "react";
 const plans = [
   {
     name: "Free",
-    price: "₹0.00",
-    description: "Price is inclusive of 18% GST",
-    buttonText: "Activated",
-    active: false,
-    // active: true,
+    price: "$0/month",
+    features: [
+      "Free For the First Month",
+      "Daily Trading Signals",
+      "Market News & Analysis",
+      "Basic Support",
+    ],
+    active: true,
   },
   {
-    name: "Monthly",
-    price: "₹1999.00",
-    description: "Price is inclusive of 18% GST",
-    buttonText: "Choose Plan",
+    name: "Pro",
+    price: "$19.99/month",
+    features: [
+      "Daily Trading Signals",
+      "Market News & Analysis",
+      "Advanced Portfolio Tools",
+      "Priority Support",
+    ],
     active: false,
   },
   {
-    name: "Yearly",
-    price: "₹17999.00",
-    description: "Price is inclusive of 18% GST",
-    buttonText: "Choose Plan",
+    name: "Premium",
+    price: "$29.99/month",
+    features: [
+      "All Pro Features",
+      "Personalized Trading Advice",
+      "Exclusive Webinars",
+      "24/7 Premium Support",
+    ],
     active: false,
   },
 ];
 
+let data = {
+  name: "vikas",
+  amount: 2,
+  number: "9999999999",
+  MID: "MID" + Date.now(),
+  transactionId: "T" + Date.now(),
+};
+
+const handleClick = async (axiosPrivate) => {
+  try {
+    console.log("clicked");
+    const res = await axiosPrivate.post(
+      "http://localhost:8000/api/v1/order",
+      data
+    );
+    console.log(res.data);
+    if (res.data.success) {
+      window.location.href = res.data.data.instrumentResponse.redirectInfo.url;
+    } else {
+      console.log("Payment initiation failed");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const SubscriptionPlan = () => {
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-8">
-        {/* <p className="mt-2 text-lg">
-          Unbiased Actionable Research driven by Logic & Probabilities
-        </p> */}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className={`p-6 rounded-lg shadow-xl transform transition-transform duration-300 hover:scale-105 ${
-              plan.active ? "bg-gray-100 text-gray-600" : "bg-white border"
-            }`}
-          >
-            <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-            <p className="text-3xl font-bold mb-4">{plan.price}</p>
-            <p className="text-sm mb-6">{plan.description}</p>
-            {/* <button
-              className={`w-full py-2 rounded-lg transition-colors duration-300 ${
-                plan.active
-                  ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
-              } font-semibold`}
-              disabled={plan.active}
+    // <section className="py-4 md:py-8 lg:py-12">
+    <section className="pt-4 md:pt-8 lg:pt-12 pb-4" id="subscription">
+      <div className="container mx-auto px-6 xl:px-32 text-center">
+        <h2 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-6 lg:mb-12">
+          Subscription Plans
+        </h2>
+        <div className="grid text-gunmetal grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 2xl:gap-16">
+          {[
+            {
+              name: "Starter",
+              price: "₹0",
+              gst: "",
+              features: [
+                "First Month Free",
+                "Trading Strategies for All",
+                "Live Performance",
+              ],
+            },
+            {
+              name: "Monthly",
+              price: "₹2000",
+              gst: "+GST",
+              features: [
+                "First 3 Months at Price of One*",
+                "Full Access",
+                "Live Performance",
+                // "Advanced order types",
+              ],
+            },
+            {
+              name: "Yearly",
+              price: "₹17999",
+              gst: "+GST",
+              features: [
+                "Get 25% Discount",
+                "Full Access",
+                "Live Performance",
+                // "Advanced order types",
+              ],
+            },
+          ].map((plan, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              {plan.buttonText}
-            </button> */}
-          </div>
-        ))}
+              <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
+              <p className="text-4xl font-semibold">
+                {plan.price}
+                <span className="text-lg">{plan.gst}</span>
+              </p>
+              <ul className="mt-6 space-y-2 text-gray-600 text-sm">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center">
+                    <span className="text-green-500 mr-2">✔</span> {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-6 w-full bg-night text-white py-2 rounded-lg hover:bg-gunmetal transition duration-300">
+                Start Now
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

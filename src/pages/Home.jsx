@@ -1,23 +1,142 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { React, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import Testimonial from "./Testimonial";
 import SubscriptionPlan from "./Subscription";
-import logo from "../assets/logos-01.svg";
-import logo3 from "../assets/logo3.jpeg";
-
-// YouTube video component
-const YouTubeVideo = ({ videoId }) => (
-  <iframe
-    className="w-full h-56 md:h-64 lg:h-72 xl:h-80 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
-    src={`https://www.youtube.com/embed/${videoId}`}
-    title="YouTube video"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  ></iframe>
-);
+import invest from "../assets/icons/invest.svg";
+import revenue from "../assets/icons/revenue.svg";
+import growth from "../assets/icons/growth.svg";
+import bearing from "../assets/icons/bearm.svg";
+import demo from "../assets/icons/demo.svg";
+import finance from "../assets/icons/finance.svg";
+import marketimpulse from "../assets/icons/market impulse.jpeg";
+import homelogin1 from "../assets/icons/homelogin1.svg";
+import homelogin2 from "../assets/icons/homelogin2.svg";
+import homelogin3 from "../assets/icons/homelogin3.svg";
+import homelogin4 from "../assets/icons/homelogin4.svg";
+import homelogin5 from "../assets/icons/homelogin5.svg";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();
+  const images = [
+    // side2,
+    // homelogin,
+
+    homelogin1,
+    homelogin2,
+    homelogin3,
+    homelogin4,
+    homelogin5,
+  ];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [activeCard, setActiveCard] = useState(null);
+
+  useEffect(() => {
+    // Automatically change the image every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 5000ms (5 seconds)
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
+  // Function to handle manual image selection
+  const handleImageSelect = (index) => {
+    setCurrentImageIndex(index);
+  };
+
+  const news = [
+    {
+      title: "NCLAT upholds insolvency order against Jaiprakash Associate",
+      link: "https://www.livemint.com/companies/news/nclat-upholds-insolvency-order-against-jaiprakash-associate-11733486851729.html",
+      time: "07:02 PM",
+    },
+    {
+      title:
+        "Microfinance stress not alarming, says RBI deputy governor Swaminathan",
+      link: "https://www.livemint.com/industry/banking/microfinance-stress-rbi-deputy-governor-swaminathan-11733482514327.html",
+      time: "06:59 PM",
+    },
+    {
+      title:
+        "December quarter will make up for poll-induced slowdown: Nirmala Sitharaman",
+      link: "https://www.livemint.com/economy/december-quarter-will-make-up-for-poll-induced-growth-slowdown-nirmala-sitharaman-11733488622456.html",
+      time: "06:50 PM",
+    },
+    {
+      title:
+        "India's forex reserves come off 5-month lows to hit $658 billion: RBI",
+      link: "https://www.livemint.com/economy/indias-forex-reserves-come-off-5-month-lows-to-hit-658-billion-halt-8-week-losing-streak-after-losing-48-billion-11733488821184.html",
+      time: "06:12 PM",
+    },
+    {
+      title: "Vishal Mega Mart IPO: Here are 10 key things to know from RHP",
+      link: "https://www.livemint.com/market/ipo/vishal-mega-mart-ipo-from-financials-to-key-dates-here-are-10-things-to-know-from-rhp-11733489062053.html",
+      time: "06:18 PM",
+    },
+    {
+      title:
+        "RBI MPC Meeting: What happens if the central bank cuts interest rates",
+      link: "https://www.livemint.com/economy/rbi-mpc-meeting-what-will-happen-if-the-central-bank-cuts-interest-rates-tomorrow-experts-weigh-in-11733415020715.html",
+      time: "09:42 PM",
+    },
+    {
+      title: "RBI signals cautious optimism on growth-inflation balance",
+      link: "https://www.livemint.com/economy/rbi-holds-repo-rate-at-6-50-cuts-crr-to-boost-liquidity-11733491106707.html",
+      time: "08:32 PM",
+    },
+    {
+      title: "Wall Street today: US stocks edge higher after strong jobs data",
+      link: "https://www.livemint.com/market/stock-market-news/wall-street-today-us-stocks-edge-higher-after-strong-jobs-data-11733495867482.html",
+      time: "09:23 PM",
+    },
+  ];
+
+  const articles = [
+    {
+      title: "Market Impulse",
+      description:
+        "A brief overview of how market impulses work and how to use them effectively.The importance of technical analysis in stock trading. The importance of technical analysis in stock trading.The importance of technical analysis in stock trading.",
+      date: "November 20, 2024",
+    },
+    {
+      title: "Market Impulse",
+      description:
+        "The objective of this article is to give a comprehensive overview of useful fintech SaaS products, Apps, websites, guides, and blogs for aspiring quant traders.The importance of technical analysis in stock trading. The importance of technical analysis in stock trading. The importance of technical analysis in stock trading.",
+      date: "November 15, 2024",
+    },
+    {
+      title: "Market Impulse",
+      description:
+        "Explore the best strategies for trading in 2024. The importance of technical analysis in stock trading. The importance of technical analysis in stock trading. Explore the best strategies for trading in 2024. The importance of technical analysis in stock trading. The importance of technical analysis in stock trading.",
+      date: "November 10, 2024",
+    },
+    {
+      title: "Weekly Update",
+      description:
+        "The importance of technical analysis in stock trading. The importance of technical analysis in stock trading. The importance of technical analysis in stock trading. Explore the best strategies for trading in 2024. The importance of technical analysis in stock trading. The importance of technical analysis in stock trading.",
+      date: "November 5, 2024",
+    },
+  ];
+
+  const texts = [
+    "More than Trading",
+    "Let's make Trading simple",
+    "Stay Ahead with Expert Analysis",
+    "Catch the Market Impulse",
+    "Live Strategy Performance",
+
+    // "Create Possiblities",
+    // "Discover Market Trends",
+    // "Uncover Market Trends Easily",
+    // "Transparency meets Technology",
+  ];
+
+  const handleMenuToggle = (index) => {
+    setActiveCard(activeCard === index ? null : index);
+  };
 
   const handleGetStarted = () => {
     const isLogged = JSON.parse(localStorage.getItem("isLogged"));
@@ -29,355 +148,312 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen scroll-smooth">
-      {/* Landing Section */}
-      <section
-        className="custom-small-height h-screen sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] text-white flex flex-col justify-center items-center text-center p-8 relative overflow-hidden"
-        style={{
-          backgroundImage: `url(${logo3})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <style jsx>
-          {`
-            @media (max-width: 639px) {
-              .custom-small-height {
-                height: 40vh;
-              }
-            }
-          `}
-        </style>
-        {/* <img
-              src={logo}
-              className="mr-3 ml-0 pl-0 w-48 h-24 justify-self-start object-cover"
-              alt="Logo"
-            /> */}
-        {/* <button
-          onClick={handleGetStarted}
-          className="bg-white text-blue-600 font-semibold py-2 px-4 rounded hover:bg-gray-100 transition duration-300"
-        >
-          Get Started
-        </button> */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-full h-full opacity-20 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 animate-pulse"></div>
+    <div className="bg-white text-gunmetal">
+      <div className="py-1 sm:py-3"></div>
+      <div className="flex flex-col lg:flex-row items-center bg-pb7 rounded-xl 3xl:max-w-8xl mx-5 xl:mx-20 2xl:mx-32 px-2 sm:px-6 lg:px-16 py-6 sm:py-8 md:py-12 lg:py-16">
+        {/* Left Content */}
+        <div className="lg:w-1/2 mx-4 2xl:mx-16 text-center lg:text-left space-y-4 sm:space-y-6">
+          <div className="h-8 lg:h-20">
+            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              {texts[currentImageIndex]}
+            </h1>
+          </div>
+          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl">
+            Get one month subscription{" "}
+            <span className="font-bold text-bs3">FREE*</span>
+          </p>
+          {/* Input Section */}
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex items-center bg-white border border-gunmetal hover:border-bs3 shadow-sm py-2 px-4 rounded-lg w-full sm:w-64 md:w-72 lg:w-80 focus-within:ring-2 focus-within:ring-bs3 focus:outline-none">
+              <span className="font-semibold">+91</span>
+              <input
+                type="text"
+                placeholder="Enter your mobile number"
+                className="flex-grow bg-white ml-3 outline-none text-sm sm:text-base"
+              />
+            </div>
+            <button className="md:order-1 order-2 bg-bs3 text-white font-bold py-2 px-4 rounded-lg transition duration-300 w-full z-1 sm:z-2 sm:w-auto">
+              <Link to="/">Sign up</Link>
+            </button>
+          </div>
+          {/* Disclaimer */}
+          <p className="md:order-2 order-1 text-xs mt-3 text-gray-600">
+            By signing up, you agree to receive investment & transaction updates
+            on WhatsApp.
+          </p>
         </div>
-      </section>
 
-      {/* YouTube Video Section */}
-      {/* <section className="py-16 bg-white p-8 rounded-lg shadow-xl">
-        <h2 className="text-4xl font-semibold text-center mb-8">
-          Trading Tips & Strategies
-        </h2>
-        <div className="overflow-x-auto">
-          <div className="flex space-x-6">
-            <YouTubeVideo videoId="BHuFfWPk3iY" />
-            <YouTubeVideo videoId="Xxs6jkjpFlk" />
-            <YouTubeVideo videoId="q12WapUwAQ8" />
-          </div>
-        </div>
-      </section>
-       */}
-
-      {/* Actionable Research Calls Section */}
-      <section className="py-16 bg-white p-8 rounded-lg shadow-xl mt-8">
-        <h2 className="text-4xl font-semibold text-center mb-8">
-          Actionable Research Calls
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Index Trades */}
-          <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4 text-blue-800">
-              Index Trades
-            </h3>
-            <p className="text-gray-700 mb-2">
-              Straightforward bets on Nifty or BankNifty Futures using
-              Macro-Technical Analysis.
-            </p>
-            <ul className="text-gray-600 space-y-1">
-              <li>
-                <strong>Horizon:</strong> 1-5 Days
-              </li>
-              <li>
-                <strong>Expected Return:</strong> 1%-3%
-              </li>
-              <li>
-                <strong>Avg Stop Loss:</strong> 1%
-              </li>
-              <li>
-                <strong>Avg R:R Ratio:</strong> 1:2
-              </li>
-            </ul>
-          </div>
-
-          {/* Trading Calls */}
-          <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4 text-blue-800">
-              Trading Calls
-            </h3>
-            <p className="text-gray-700 mb-2">
-              Long/Short Trades on Stocks using Technical Analysis & Pattern
-              Recognition.
-            </p>
-            <ul className="text-gray-600 space-y-1">
-              <li>
-                <strong>Time Horizon:</strong> 2 Weeks
-              </li>
-              <li>
-                <strong>Expected Return:</strong> 3%-8%
-              </li>
-              <li>
-                <strong>Avg Stop Loss:</strong> 2%-3%
-              </li>
-              <li>
-                <strong>Avg R:R Ratio:</strong> 1:2
-              </li>
-            </ul>
-          </div>
-
-          {/* Positional Trades */}
-          <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4 text-blue-800">
-              Positional Trades
-            </h3>
-            <p className="text-gray-700 mb-2">
-              Medium-term trades with higher returns and better risk-to-reward
-              ratio.
-            </p>
-            <ul className="text-gray-600 space-y-1">
-              <li>
-                <strong>Time Horizon:</strong> 3-5 Months
-              </li>
-              <li>
-                <strong>Expected Return:</strong> 15%-35%
-              </li>
-              <li>
-                <strong>Avg Stop Loss:</strong> 5%-10%
-              </li>
-              <li>
-                <strong>Avg R:R Ratio:</strong> 1:3
-              </li>
-            </ul>
-          </div>
-
-          {/* Option Makers */}
-          <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4 text-blue-800">
-              Option Makers
-            </h3>
-            <p className="text-gray-700 mb-2">
-              High-risk strategy using Technical Analysis to trade opportunities
-              in Index Options.
-            </p>
-            <ul className="text-gray-600 space-y-1">
-              <li>
-                <strong>Time Horizon:</strong> 1-3 Days
-              </li>
-              <li>
-                <strong>Expected Return:</strong> 75%-150%
-              </li>
-              <li>
-                <strong>Avg Stop Loss:</strong> 50%
-              </li>
-              <li>
-                <strong>Avg R:R Ratio:</strong> 1:3
-              </li>
-            </ul>
+        {/* Right Image */}
+        <div className="mt-8 lg:mt-0 lg:w-1/2 flex flex-col items-center">
+          <img
+            src={images[currentImageIndex]} // Show current image
+            alt={`Hero Image ${currentImageIndex + 1}`}
+            className="w-full max-h-64 rsm:w-4/5 md:w-3/4 lg:w-full max-w-xs sm:max-w-md lg:max-w-lg object-contain transition-opacity duration-700 ease-in-out"
+          />
+          {/* Image Selector Buttons */}
+          <div className="mt-8 flex space-x-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleImageSelect(index)} // Call function with index
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentImageIndex === index
+                    ? "bg-bs scale-125"
+                    : "bg-gray-400 hover:bg-gray-500"
+                }`}
+              ></button>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Featured Services Section */}
-      <section className="py-16 bg-white p-8 rounded-lg shadow-xl transform transition-transform duration-300">
-        <h2 className="text-4xl font-semibold text-center mb-8">
-          Our Features
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"> */}
-          <div className="bg-gradient-to-br from-blue-200 to-blue-400 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4">
-              🔔 Automated Trade Notifications
-            </h3>
+      {/* <hr className="border-gunmetal border-1 my-6" /> */}
 
-            <p className="text-gray-600">
-              Seamlessly navigate your trades with our automated notifications,
-              guiding you through every step from entry to exit.
-            </p>
-          </div>
-          {/* <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"> */}
-          <div className="bg-gradient-to-br from-purple-200 to-purple-400 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4">📈 Daily Market Insights</h3>
-            <p className="text-gray-600">
-              Stay ahead of the curve with our unbiased market updates. Dive
-              into real trends through our in-depth analysis and leverage our
-              'Trendo Meter' for a comprehensive market perspective.
-            </p>
-          </div>
-          {/* <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"> */}
-          <div className="bg-gradient-to-br from-green-200 to-green-400 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4">💼 Derivatives Expertise</h3>
-            <p className="text-gray-600">
-              Unlock the power of derivatives analysis with simplified Open
-              Interest (OI) and Put-Call Ratio (PCR) data analytics, enhancing
-              your understanding of market dynamics.
-            </p>
-          </div>
-          {/* <div className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"> */}
-          <div className="bg-gradient-to-br from-orange-200 to-orange-400 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-bold mb-4">
-              📊 Live Strategy Performance
-            </h3>
-
-            <p className="text-gray-600">
-              Gain exclusive access to our Live Performance Reports, providing a
-              detailed overview of how our strategies are performing in
-              real-time.
-            </p>
+      {/* Trading Strategies Section */}
+      <section className="py-4 md:py-8 lg:py-12">
+        <div className="container mx-auto px-6 xl:px-32">
+          <h2 className="text-3xl font-semibold text-center mb-6 lg:mb-12">
+            Trading Strategies
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                image: invest,
+                title: "Index Trades",
+                description:
+                  "Straightforward bets on Nifty or BankNifty Futures using Macro-Technical Analysis.",
+                details: [
+                  { label: "Time Horizon", value: "1-5 Days" },
+                  { label: "Expected Return", value: "1%-3%" },
+                  { label: "Avg Stop Loss", value: "1%" },
+                  { label: "Avg R:R Ratio", value: "1:2" },
+                ],
+              },
+              {
+                image: finance,
+                title: "Trading Calls",
+                description:
+                  "Long/Short Trades on Stocks using Technical Analysis & Pattern Recognition.",
+                details: [
+                  { label: "Time Horizon", value: "2 Weeks" },
+                  { label: "Expected Return", value: "3%-8%" },
+                  { label: "Avg Stop Loss", value: "2%-3%" },
+                  { label: "Avg R:R Ratio", value: "1:2" },
+                ],
+              },
+              {
+                image: growth,
+                title: "Positional Trades",
+                description:
+                  "Medium-term trades with higher returns and better risk-to-reward ratio.",
+                details: [
+                  { label: "Time Horizon", value: "3-5 Months" },
+                  { label: "Expected Return", value: "15%-35%" },
+                  { label: "Avg Stop Loss", value: "5%-10%" },
+                  { label: "Avg R:R Ratio", value: "1:3" },
+                ],
+              },
+              {
+                image: bearing,
+                title: "Option Makers",
+                description:
+                  "High-risk strategy using Technical Analysis to trade opportunities in Index Options.",
+                details: [
+                  { label: "Time Horizon", value: "1-3 Days" },
+                  { label: "Expected Return", value: "75%-150%" },
+                  { label: "Avg Stop Loss", value: "50%" },
+                  { label: "Avg R:R Ratio", value: "1:3" },
+                ],
+              },
+            ].map((strategy, index) => (
+              <div
+                key={index}
+                className="group relative h-72 w-full [perspective:1000px] mx-auto"
+              >
+                {/* Card Wrapper */}
+                <div className="relative h-full w-full transform transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                  {/* Front Side */}
+                  <div className="absolute inset-0 bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center [backface-visibility:hidden]">
+                    <img
+                      src={strategy.image}
+                      alt={strategy.title}
+                      className="h-16 w-auto mb-4"
+                    />
+                    <h3 className="text-lg font-bold text-center mb-2">
+                      {strategy.title}
+                    </h3>
+                    <p className="text-sm text-center">
+                      {strategy.description}
+                    </p>
+                  </div>
+                  {/* Back Side */}
+                  <div className="absolute inset-0 bg-pb7 text-gunmetal rounded-lg shadow-md p-6 flex flex-col justify-center items-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                    <h3 className="text-2xl text-bs3 font-bold mb-4">
+                      {strategy.title}
+                    </h3>
+                    <ul className="text-sm space-y-2 text-center">
+                      {strategy.details.map((detail, idx) => (
+                        <li key={idx}>
+                          <strong>{detail.label}:</strong> {detail.value}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Subscription Plans Section */}
-      <section
-        id="subscription"
-        className="py-16 bg-blue-50 p-8 rounded-lg shadow-xl"
-      >
-        <p className="py-20 text-center text-2xl italic font-bold text-blue-800">
-          "We are awaiting SEBI Approval to launch our Subscription services,
-          current pricing plans are for representation only."
-        </p>
-        <h2 className="text-4xl font-semibold text-center mb-10">
-          Subcription Plan
+      <SubscriptionPlan />
+
+      <p className="text-center mx-auto px-6 xl:px-32 text-md sm:text-md md:text-lg italic text-night pb-6">
+        "We are awaiting SEBI approval to launch our subscription services,
+        current pricing plans are for representation only."
+      </p>
+
+      {/* Articles Section */}
+      <div className="container mx-auto px-6 xl:px-32 py-4 md:py-8 lg:py-12">
+        <h2 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-center mb-6 lg:mb-12">
+          Latest Articles
         </h2>
-        <SubscriptionPlan />
-      </section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {articles.map((article, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <div className="p-6">
+                {/* Article Header */}
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl sm:text-2xl font-semibold">
+                    {article.title}
+                  </h3>
+                  {/* Three-Dot Menu Icon */}
+                  <div className="relative">
+                    <button
+                      className="p-2 rounded-full hover:bg-gray-200 focus:outline-none"
+                      onClick={() =>
+                        setActiveCard(activeCard === index ? null : index)
+                      }
+                    >
+                      <BsThreeDotsVertical className="w-5 h-5 text-gray-700" />
+                    </button>
+                    {/* Dropdown Menu */}
+                    {activeCard === index && (
+                      <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg z-50">
+                        <ul>
+                          <li>
+                            <a
+                              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                                article.title
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center px-4 py-2 hover:text-white hover:bg-black"
+                            >
+                              <FaXTwitter className="w-5 h-5" />
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                                article.title
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center px-4 py-2 hover:bg-green-100"
+                            >
+                              <FaWhatsapp className="w-5 h-5 text-green-500" />
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+                                window.location.href
+                              )}&title=${encodeURIComponent(article.title)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center px-4 py-2 hover:bg-blue-50"
+                            >
+                              <FaLinkedin className="w-5 h-5 text-blue-700" />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {/* Article Content */}
+                <p className="text-left text-xs text-gray-500 mt-2">
+                  {/* {article.date} */}
+                </p>
+                <hr className="my-3 border-bs3" />
+                {/* <p className="opacity-20 animate-pulse text-sm text-justify line-clamp-5 mt-2 sm:mt-4">
+                  {article.description}
+                </p> */}
+                <div className="animate-pulse opacity-20 text-center gap-3 text-md">
+                  <p>coming soon</p>
+                  <p>coming soon</p>
+                  <p>coming soon</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* News Section */}
+      {/* <div className="container mx-auto px-6 xl:px-32 py-4 md:py-8 lg:py-12">
+        <div className="gmax-w-6xl mx-auto">
+          Left Container
+          <div className="p-6 text-left rounded-lg border border-gray-300 shadow-lg bg-white">
+            <h2 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-center mb-2 lg:mb-6">
+              Latest News
+            </h2>
+            <p className="text-sm text-gray-500 text-center mb-6">
+              Friday, December 6, 2024
+            </p>
+            <div className="space-y-4">
+              {news.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-1 rounded-lg hover:bg-gray-100 transition"
+                >
+                  <div className="mx-0 md:mx-5 text-sm sm:text-md md:text-lg text-gray-500">
+                    {item.time}{" "}
+                    <span className="text-gunmetal font-medium">
+                      {" | "} {item.title}
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div> */}
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-100 rounded-lg shadow-xl">
-        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
-          What Our Clients Say
-        </h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {[
-            {
-              text: "Amazing calls in Nifty.",
-              author: "Tushar Arahant",
-            },
-            {
-              text: "Market Impulse is very helpful.",
-              author: "Prashant Vaghela",
-            },
-            {
-              text: "Good trades, & they don't give unnecessary trades.",
-              author: "Hardik Roy",
-            },
-          ].map((testimonial, index) => (
-            <div
-              key={index}
-              className="relative group h-[14em] w-[15em] bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col p-4"
-            >
-              <div className="circle absolute h-[4em] w-[4em] -top-[2em] -right-[2em] rounded-full bg-[#FF5800] group-hover:scale-[800%] duration-500 z-[-1]"></div>
-              <div className="pt-6 flex flex-col items-center justify-center mb-4">
-                {/* Stars */}
-                <div className="flex gap-1 text-yellow-400 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              {/* Information */}
-              <p className="text-gray-600 leading-relaxed mb-2 text-center italic group-hover:text-white duration-500">
-                "{testimonial.text}"
-              </p>
-              <div className="author text-sm text-gray-800 text-center font-medium group-hover:text-white duration-500">
-                — {testimonial.author}
-              </div>
-            </div>
-          ))}
+      <Testimonial />
+      {/* <div class="relative flex overflow-x-hidden">
+        <div class="py-12 animate-marquee whitespace-nowrap">
+          <span class="text-4xl mx-4">Marquee Item 1</span>
+          <span class="text-4xl mx-4">Marquee Item 2</span>
+          <span class="text-4xl mx-4">Marquee Item 3</span>
+          <span class="text-4xl mx-4">Marquee Item 4</span>
+          <span class="text-4xl mx-4">Marquee Item 5</span>
+          <span class="text-4xl mx-4">Marquee Item 1</span>
+          <span class="text-4xl mx-4">Marquee Item 2</span>
+          <span class="text-4xl mx-4">Marquee Item 3</span>
+          <span class="text-4xl mx-4">Marquee Item 4</span>
+          <span class="text-4xl mx-4">Marquee Item 5</span>
         </div>
-      </section>
-
-      {/* Testimonials Section
-      <section className="py-16 bg-gray-100 rounded-lg shadow-xl">
-        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
-          What Our Clients Say
-        </h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {[
-            {
-              text: "Amazing calls in Nifty.",
-              author: "Tushar Arahant",
-            },
-            {
-              text: "Market Impulse is very helpful.",
-              author: "Prashant Vaghela",
-            },
-            {
-              text: "Good trades, & they don't give unnecessary trades.",
-              author: "Hardik Roy",
-            },
-          ].map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 w-72 h-64 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col p-4"
-            >
-              <div className="flex p-2 gap-1 absolute top-3 left-3">
-                <span className="bg-teal-500 inline-block w-3 h-3 rounded-full"></span>
-                <span className="bg-orange-500 inline-block w-3 h-3 rounded-full"></span>
-                <span className="bg-indigo-500 inline-block w-3 h-3 rounded-full"></span>
-              </div>
-              <div className="flex flex-col items-center justify-center h-full">
-                Stars
-                <div className="flex gap-1 text-yellow-400 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                    </svg>
-                  ))}
-                </div>
-                Information
-                <p className="text-gray-600 leading-relaxed text-center italic mb-2">
-                  "{testimonial.text}"
-                </p>
-                <div className="author text-sm text-gray-500 text-center font-medium">
-                  — {testimonial.author}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-      {/* Call to Action Section */}
-      <section className="py-16 bg-blue-600 text-white text-center  shadow-xl">
-        <h2 className="text-4xl font-bold mb-4 animate__animated animate__fadeIn">
-          Start Your Trading Journey Today!
-        </h2>
-        <p className="text-lg mb-6 animate__animated animate__fadeIn animate__delay-1s">
-          Sign up now and unlock access to exclusive trading strategies, tips,
-          and tools.
-        </p>
-        <button
-          onClick={handleGetStarted}
-          className="bg-white text-blue-600 font-semibold py-2 px-4 rounded hover:bg-gray-300 transition duration-300"
-        >
-          Get Started
-        </button>
-      </section>
+      </div> */}
     </div>
   );
 };
