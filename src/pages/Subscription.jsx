@@ -67,10 +67,10 @@ const SubscriptionPlan = () => {
     // <section className="py-4 md:py-8 lg:py-12">
     <section className="pt-4 md:pt-8 lg:pt-12 pb-4" id="subscription">
       <div className="container mx-auto px-6 xl:px-32 text-center">
-        <h2 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-6 lg:mb-12">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 lg:mb-12">
           Subscription Plans
         </h2>
-        <div className="grid text-gunmetal grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 2xl:gap-16">
+        <div className="grid text-gunmetal grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 2xl:gap-16">
           {[
             {
               name: "Starter",
@@ -107,21 +107,21 @@ const SubscriptionPlan = () => {
           ].map((plan, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="p-3 sm:p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-              <p className="text-4xl font-semibold">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">{plan.name}</h3>
+              <p className="text-xl sm:text-2xl md:text-3xl font-semibold">
                 {plan.price}
-                <span className="text-lg">{plan.gst}</span>
+                <span className="text-md sm:text-lg">{plan.gst}</span>
               </p>
-              <ul className="mt-6 space-y-2 text-gray-600 text-sm">
+              <ul className="mt-4 sm:mt-6 space-y-2 text-gray-600 text-xs sm:text-sm">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center">
                     <span className="text-green-500 mr-2">✔</span> {feature}
                   </li>
                 ))}
               </ul>
-              <button className="mt-6 w-full bg-night text-white py-2 rounded-lg hover:bg-gunmetal transition duration-300">
+              <button className="mt-4 sm:mt-6 text-sm md:text-md w-full bg-night text-white py-2 rounded-lg hover:bg-gunmetal transition duration-300">
                 Start Now
               </button>
             </div>

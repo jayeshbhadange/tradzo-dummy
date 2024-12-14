@@ -20,16 +20,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();
-  const images = [
-    // side2,
-    // homelogin,
-
-    homelogin1,
-    homelogin2,
-    homelogin3,
-    homelogin4,
-    homelogin5,
-  ];
+  const images = [homelogin1, homelogin2, homelogin3, homelogin4, homelogin5];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeCard, setActiveCard] = useState(null);
 
@@ -149,12 +140,12 @@ const Home = () => {
 
   return (
     <div className="bg-white text-gunmetal">
-      <div className="py-1 sm:py-3"></div>
-      <div className="flex flex-col lg:flex-row items-center bg-pb7 rounded-xl 3xl:max-w-8xl mx-5 xl:mx-20 2xl:mx-32 px-2 sm:px-6 lg:px-16 py-6 sm:py-8 md:py-12 lg:py-16">
+      <div className="py-2 sm:py-3"></div>
+      <div className="flex flex-col lg:flex-row items-center bg-pb7 rounded-xl 3xl:max-w-8xl mx-3 xl:mx-20 2xl:mx-32 px-2 sm:px-6 lg:px-16 py-6 sm:py-8 md:py-12 lg:py-16">
         {/* Left Content */}
         <div className="lg:w-1/2 mx-4 2xl:mx-16 text-center lg:text-left space-y-4 sm:space-y-6">
-          <div className="h-8 lg:h-20">
-            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <div className="h-12 lg:h-20">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               {texts[currentImageIndex]}
             </h1>
           </div>
@@ -177,7 +168,7 @@ const Home = () => {
             </button>
           </div>
           {/* Disclaimer */}
-          <p className="md:order-2 order-1 text-xs mt-3 text-gray-600">
+          <p className="md:order-2 order-1 text-[9px] sm:text-xs mt-3 text-gray-600">
             By signing up, you agree to receive investment & transaction updates
             on WhatsApp.
           </p>
@@ -210,12 +201,12 @@ const Home = () => {
       {/* <hr className="border-gunmetal border-1 my-6" /> */}
 
       {/* Trading Strategies Section */}
-      <section className="py-4 md:py-8 lg:py-12">
+      <section className="py-8 md:py-10 lg:py-12">
         <div className="container mx-auto px-6 xl:px-32">
-          <h2 className="text-3xl font-semibold text-center mb-6 lg:mb-12">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-center mb-6 lg:mb-12">
             Trading Strategies
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               {
                 image: invest,
@@ -268,30 +259,30 @@ const Home = () => {
             ].map((strategy, index) => (
               <div
                 key={index}
-                className="group relative h-72 w-full [perspective:1000px] mx-auto"
+                className="group relative h-52 sm:h-72 w-full [perspective:1000px] mx-auto"
               >
                 {/* Card Wrapper */}
                 <div className="relative h-full w-full transform transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front Side */}
-                  <div className="absolute inset-0 bg-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center [backface-visibility:hidden]">
+                  <div className="p-6 absolute inset-0 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center [backface-visibility:hidden]">
                     <img
                       src={strategy.image}
                       alt={strategy.title}
                       className="h-16 w-auto mb-4"
                     />
-                    <h3 className="text-lg font-bold text-center mb-2">
+                    <h3 className="text-md md:text-lg font-bold text-center mb-2">
                       {strategy.title}
                     </h3>
-                    <p className="text-sm text-center">
+                    <p className="text-xs sm:text-sm text-center">
                       {strategy.description}
                     </p>
                   </div>
                   {/* Back Side */}
                   <div className="absolute inset-0 bg-pb7 text-gunmetal rounded-lg shadow-md p-6 flex flex-col justify-center items-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <h3 className="text-2xl text-bs3 font-bold mb-4">
+                    <h3 className="text-xl md:text-2xl text-bs3 font-bold mb-4">
                       {strategy.title}
                     </h3>
-                    <ul className="text-sm space-y-2 text-center">
+                    <ul className="text-xs sm:text-sm space-y-2 text-center">
                       {strategy.details.map((detail, idx) => (
                         <li key={idx}>
                           <strong>{detail.label}:</strong> {detail.value}
@@ -309,26 +300,26 @@ const Home = () => {
       {/* Subscription Plans Section */}
       <SubscriptionPlan />
 
-      <p className="text-center mx-auto px-6 xl:px-32 text-md sm:text-md md:text-lg italic text-night pb-6">
+      <p className="text-center mx-auto px-6 xl:px-32 text-[11px] sm:text-[13px] md:text-md italic text-night pb-6">
         "We are awaiting SEBI approval to launch our subscription services,
         current pricing plans are for representation only."
       </p>
 
       {/* Articles Section */}
       <div className="container mx-auto px-6 xl:px-32 py-4 md:py-8 lg:py-12">
-        <h2 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-center mb-6 lg:mb-12">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-center mb-6 lg:mb-12">
           Latest Articles
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {articles.map((article, index) => (
             <div
               key={index}
               className="bg-white shadow-lg rounded-lg overflow-hidden"
             >
-              <div className="p-6">
+              <div className="p-3 md:p-6">
                 {/* Article Header */}
                 <div className="flex justify-between items-center">
-                  <h3 className="text-xl sm:text-2xl font-semibold">
+                  <h3 className="text-sm sm:text-md lg:text-lg xl:text-xl font-semibold">
                     {article.title}
                   </h3>
                   {/* Three-Dot Menu Icon */}
@@ -339,7 +330,7 @@ const Home = () => {
                         setActiveCard(activeCard === index ? null : index)
                       }
                     >
-                      <BsThreeDotsVertical className="w-5 h-5 text-gray-700" />
+                      <BsThreeDotsVertical className="w-auto h-3 sm:h-5 text-gray-700" />
                     </button>
                     {/* Dropdown Menu */}
                     {activeCard === index && (
@@ -387,14 +378,14 @@ const Home = () => {
                   </div>
                 </div>
                 {/* Article Content */}
-                <p className="text-left text-xs text-gray-500 mt-2">
+                <p className="text-left text-xs text-gray-500 mt-1 md:mt-2">
                   {/* {article.date} */}
                 </p>
-                <hr className="my-3 border-bs3" />
+                <hr className="my-1 md:my-3 border-bs3" />
                 {/* <p className="opacity-20 animate-pulse text-sm text-justify line-clamp-5 mt-2 sm:mt-4">
                   {article.description}
                 </p> */}
-                <div className="animate-pulse opacity-20 text-center gap-3 text-md">
+                <div className="animate-pulse opacity-20 text-center gap-3 text-sm sm:text-md">
                   <p>coming soon</p>
                   <p>coming soon</p>
                   <p>coming soon</p>

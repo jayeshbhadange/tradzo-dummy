@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-white text-gunmetal text-xs md:text-sm">
+    <div className="bg-white text-gunmetal text-xs md:text-[13px]">
       <div className="mx-auto text-justify xl:mx-20 2xl:mx-32 px-4 sm:px-6 lg:px-16 py-4 sm:py-6 md:py-8">
         <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-2 sm:mb-4 md:mb-6">
           Privacy Policy
@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-md md:text-lg lg:text-xl font-semibold mb-2 pt-4">
             Information you provided to us
           </h2>
-          <ul className="list-disc list-inside mb-4 ml-6">
+          <ul className="list-disc list-inside mb-4 ml-3 md:ml-6">
             <li>
               If you provide us feedback or contact us via e-mail, we will
               collect your name and e-mail address, as well as any other content
@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-md md:text-lg lg:text-xl  font-semibold mb-2 pt-4">
             Information collected via technology
           </h2>
-          <ul className="list-disc list-inside mb-4 ml-6">
+          <ul className="list-disc list-inside mb-4 ml-3 md:ml-6">
             <li>
               To make our Platform and Services more useful to you, our servers
               (which may be hosted by a third-party service provider) collect
@@ -122,7 +122,7 @@ const PrivacyPolicy = () => {
               your company is used either to respond to requests that you make,
               or to aid us in serving you better. We use such Personal
               Information in the following ways:
-              <ul className="list-disc list-inside mt-2 ml-6 space-y-1">
+              <ul className="list-disc list-inside mt-2 space-y-1 ml-3 md:ml-6">
                 <li>To identify you as a user in our system;</li>
                 <li>
                   To provide improved administration of our Platform and
@@ -213,6 +213,63 @@ const PrivacyPolicy = () => {
             click on links to such outside websites.
           </p>
 
+          <p className="mb-4">
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>
+                TradingView: TradingView's data protection practices are related
+                only to the{" "}
+                <a
+                  href="http://tradingview.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                >
+                  https://www.tradingview.com
+                </a>{" "}
+                website. Tradzo's privacy policy is not related to TradingView's
+                privacy policy, neither TradingView's policy related to{" "}
+                <a
+                  href="http://tradzo.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                >
+                  Tradzo.in
+                </a>
+                {". "}
+              </li>
+            </ul>
+          </p>
+
+          {/* <div className="ml-6">
+            <h2 className="text-md md:text-lg font-semibold mb-2">Charts</h2>
+
+            <p className="mb-4">
+              We use charts powered by{" "}
+              <a
+                href="https://tradingview.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+              >
+                TradingView
+              </a>
+              .
+              <ul className="list-disc list-inside mt-2 ml-6 space-y-1">
+                <li>
+                  TradingView's privacy policy is different from Tradzo's
+                  privacy policy and not related, TradingView's privacy policy
+                  only pertain to tradingview.com.
+                </li>
+
+                <li>
+                  You agree to TradingView's terms and conditon and privacy
+                  policy by using charts. We are not liable for{" "}
+                </li>
+              </ul>
+            </p>
+          </div> */}
+
           <h2 className="text-md md:text-lg lg:text-xl font-semibold mb-4 pt-4">
             Cookies
           </h2>
@@ -271,7 +328,7 @@ const PrivacyPolicy = () => {
             Definitions
           </h2>
 
-          <ul className="list-disc list-inside my-4 ml-6 space-y-2">
+          <ul className="list-disc list-inside my-4 space-y-2 ml-3 md:ml-6">
             <li>
               Anonymous Information - Anonymous information means information
               that does not directly or indirectly identify, and cannot

@@ -2,7 +2,7 @@ import React from "react";
 
 const TermsText = () => {
   return (
-    <div>
+    <div className="text-xs md:text-[13px]">
       <p className="mb-4">
         By continuing to use this website and/or application (the Platform), you
         agree to be bound by the terms and conditions (Terms) set out below.
@@ -54,7 +54,7 @@ const TermsText = () => {
       <h2 className="text-md md:text-lg lg:text-xl font-semibold mt-8 mb-4">
         Definitions
       </h2>
-      <ul className="list-disc list-inside ml-6">
+      <ul className="list-disc list-inside ml-3 md:ml-6">
         <li>
           <strong>Company</strong> shall mean Tradzo Technologies Private
           Limited.
@@ -93,7 +93,7 @@ const TermsText = () => {
       <h2 className="text-md md:text-lg lg:text-xl font-semibold mb-4 pt-4">
         Services
       </h2>
-      <ol className="list-decimal list-inside ml-6 mb-4 space-y-4 ">
+      <ol className="list-decimal list-inside mb-4 space-y-4 ml-3 md:ml-6">
         <li>
           The Company operates the Platform to enable the User to avail the
           Equities Research & Investment Advisory Services. The User
@@ -252,7 +252,7 @@ const TermsText = () => {
         action it deems necessary at its sole discretion:
       </p>
 
-      <ol className="list-decimal list-inside mb-4 space-y-3 ml-6">
+      <ol className="list-decimal list-inside mb-4 space-y-3  ml-3 md:ml-6">
         <li>
           You agree not to attempt to reverse-engineer, disseminate, copy,
           exploit, or represent yourself as an agent or reseller of the Platform
@@ -338,7 +338,7 @@ const TermsText = () => {
 
       <p className="mb-4">The user undertakes to:</p>
 
-      <ol className="list-decimal list-inside ml-6 mb-4 space-y-3">
+      <ol className="list-decimal list-inside mb-4 space-y-3 ml-3 md:ml-6">
         <li>
           be responsible for maintaining the confidentiality of your account and
           password and for restricting access to your computer to prevent
@@ -427,7 +427,7 @@ const TermsText = () => {
       <h2 className="text-md md:text-lg lg:text-xl font-semibold mt-8 mb-4">
         REFUND POLICY & SUBSCRIPTION CANCELLATION
       </h2>
-      <ul className="list-disc list-inside ml-6">
+      <ul className="list-disc list-inside  ml-3 md:ml-6">
         <li>
           For paid services, subscription payments can be made via PhonePe.
         </li>
@@ -438,10 +438,10 @@ const TermsText = () => {
         </li>
         <li>
           For plans with a duration of six months or longer, pro-rata refunds
-          can be requested within 30 days of purchase by contacting the
-          Tradzo support team.
+          can be requested within 30 days of purchase by contacting the Tradzo
+          support team.
         </li>
-        <ul className="list-disc list-inside ml-6">
+        <ul className="list-disc list-inside  ml-4 md:ml-6">
           <li>
             The pro-rata refund calculation for these plans will be based on the
             standard one-month plan rate, not the discounted rate. Refund
@@ -466,7 +466,7 @@ const TermsText = () => {
         Exclusion of Warranties
       </h2>
 
-      <ol className="list-decimal list-inside mb-4 ml-6 space-y-3">
+      <ol className="list-decimal list-inside mb-4 space-y-3 ml-3 md:ml-6">
         <li>
           The Company does not provide any warranty, express or implied, for the
           accuracy or completeness of the Platform or the Services, and
@@ -494,7 +494,7 @@ const TermsText = () => {
 
         <li>
           We further do not represent or warrant to you that:
-          <ul className="list-disc list-inside mb-4 ml-6">
+          <ul className="list-disc list-inside mb-4  ml-4 md:ml-6">
             <li>
               Your use of our Platform and Services will meet your requirements.
             </li>
@@ -550,7 +550,7 @@ const TermsText = () => {
           The Company, the Associate Companies and their respective affiliates,
           subsidiaries, directors, employees, promoters and agents shall not be
           liable for:
-          <ul className="list-disc list-inside my-4 ml-6 space-y-2">
+          <ul className="list-disc list-inside my-4 space-y-2 ml-3 md:ml-6">
             <li>
               any direct, indirect, incidental, special, consequential or
               exemplary loss or damage suffered by the User, however, caused and

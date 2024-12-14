@@ -33,14 +33,14 @@ export const links = [
       { name: "FII DII Data", link: "" },
     ],
   },
-  //   {
-  //     name: "About",
-  //     submenu: false,
-  //     link: "/about",
-  //   },
-  //   {
-  //     name: "Support",
-  //     submenu: false,
-  //     link: "/contact", // Renamed to align with "Support"
-  //   },
+  // {
+  //   name: "About",
+  //   submenu: false,
+  //   link: "/about",
+  // },
+  // {
+  //   name: "Support",
+  //   submenu: false,
+  //   link: "/contact", // Renamed to align with "Support"
+  // },
 ];

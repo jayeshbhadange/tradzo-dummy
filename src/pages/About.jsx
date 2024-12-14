@@ -70,14 +70,14 @@ const About = () => {
               ].map((founder, index) => (
                 <div
                   key={index}
-                  className=" flex flex-col items-center p-6 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                  className="flex flex-col items-center p-6 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-xl"
                 >
                   {/* Image Section */}
-                  <div className="w-30 h-30 sm:w-60 sm:h-60 rounded-full overflow-hidden mb-6">
+                  <div className="w-auto h-15 sm:h-30 md:h-60 rounded-full overflow-hidden mb-6">
                     <img
                       src={founder.img}
                       alt={founder.name}
-                      className="w-30 h-30 sm:w-60 sm:h-60 object-cover"
+                      className="w-auto h-15 sm:h-30 md:h-60 "
                     />
                   </div>
 

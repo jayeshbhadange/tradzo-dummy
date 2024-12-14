@@ -138,26 +138,26 @@ const Testimonial = () => {
 
   return (
     <section className="text-gunmetal py-4 md:py-8 lg:py-12">
-      <h2 className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-center mb-6 lg:mb-12">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-center mb-6 lg:mb-12">
         What Our Clients Say
       </h2>
 
       <div className="relative overflow-hidden">
         {/* First row - Left to right scrolling */}
         <div className="flex gap-5 animate-marquee">
-          <div className="flex gap-5">
+          <div className="flex gap-3 md:gap-5">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-pb7 rounded-3xl p-4 w-[250px] flex-shrink-0 transition-transform duration-300"
+                className="bg-pb7 rounded-2xl p-2 md:p-4 w-[200px] md:w-[250px] flex-shrink-0 transition-transform duration-300"
               >
                 {/* Quote Icon */}
-                <div className="text-bs3 text-md flex">
+                <div className="text-bs3 text-xs sm:text-sm md:text-md flex">
                   <FaQuoteLeft />
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="italic text-center leading-relaxed min-h-[4.5rem] flex items-center justify-center">
+                <p className="italic text-xs sm:text-md text-center leading-relaxed min-h-[3.0rem] sm:min-h-[4.5rem] flex items-center justify-center">
                   "{testimonial.text}"
                 </p>
 
@@ -169,7 +169,7 @@ const Testimonial = () => {
                     className="w-10 h-10 rounded-full border-2 border-gray-300"
                   /> */}
                   <div>
-                    <h3 className="text-xs font-bold">
+                    <h3 className="text-[11px] md:text-xs font-bold">
                       - {testimonial.author}
                     </h3>
                     {/* <p className="text-xs">{testimonial.designation}</p> */}

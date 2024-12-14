@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../assets/icons/logos-01.svg";
-import { FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from "react-icons/fa";
+import logo from "../../../assets/Only Logo/Logo-01.svg";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaFacebook,
+  FaHeart,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
@@ -22,58 +28,69 @@ function Footer() {
     <footer className="bg-slate-50 text-gunmetal py-16">
       <div className="container sm:text-sm md:text-md text-xs mx-auto px-6 lg:px-1">
         {/* Intro */}
-        <div className="flex flex-col gap-2 md:gap-8 md:flex-row md:justify-between items-center text-center mb-8 lg:px-32">
-          <div className="">
-            <p className="max-w-sm leading-6 text-justify md:visible">
+        <div className="flex flex-col gap-4 md:flex-row md:justify-between items-center text-center mb-8 lg:px-32">
+          {/* Left Text Section */}
+          <div className="md:flex-1">
+            <p className="text-[13px] leading-6 text-justify">
               Tradzo Technologies creates platforms & investment products to
               invest in Indian Equities with more Transparency & Professional
               Approach. Our strategies are curated to provide actionable
               research and trades in Equities & Derivatives.
             </p>
           </div>
-          <div>
-            {/* Logo */}
-            <Link to="/" className="flex justify-center mx-auto">
+
+          {/* Logo Section */}
+          <div className="md:flex-1 flex flex-col items-center gap-2">
+            <Link to="/" className="flex justify-center">
               <img
                 src={logo}
-                className="md:h-24 sm:h-12 h-10 w-auto"
+                className="md:h-32 sm:h-16 h-12 w-auto"
                 alt="Logo"
               />
             </Link>
+
+            {/* Center Section with Love */}
+            <div className="md:py-5">
+              <p className="text-[12px] flex justify-center items-center">
+                Building in India with{" "}
+                <span className="ml-1">
+                  <FaHeart className="text-red-500" />
+                </span>
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-3 xl:gap-4 gap-1">
+          {/* Links Section */}
+          <div className="md:flex-1 grid grid-cols-3 gap-4">
+            {/* Company */}
             <div>
-              <h2 className="lg:text-md md:text-sm font-semibold mb-1 sm:mb-4">
-                Company
-              </h2>
-              <ul className="space-y-0 sm:space-y-1">
+              <h2 className="text-md font-semibold mb-4">Company</h2>
+              <ul className="space-y-1 text-[13px]">
                 <li>
-                  <Link to="/about-us" className="hover:text-gray-400">
-                    About Us
+                  <Link to="/contact" className="hover:text-gray-400">
+                    Support
                   </Link>
                 </li>
-
+                <li>
+                  <Link to="/about" className="hover:text-gray-400">
+                    About
+                  </Link>
+                </li>
                 <li>
                   <a
-                    href="mailto:info@tradzo.in"
+                    href="mailto:careers@tradzo.in"
                     className="hover:text-gray-400"
                   >
                     Careers
                   </a>
                 </li>
-                <li>
-                  <Link to="/contact" className="hover:text-gray-400">
-                    Contact Us
-                  </Link>
-                </li>
               </ul>
             </div>
+
+            {/* Resources */}
             <div>
-              <h2 className="lg:text-md md:text-sm font-semibold mb-1 sm:mb-4">
-                Resources
-              </h2>
-              <ul className="space-y-0 sm:space-y-1">
+              <h2 className="text-md font-semibold mb-4">Resources</h2>
+              <ul className="space-y-1 text-[13px]">
                 <li>
                   <a
                     href="https://www.nseindia.com"
@@ -82,58 +99,55 @@ function Footer() {
                     className="hover:text-gray-400"
                   >
                     NSE
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    to="https://www.bseindia.com"
+                  </a>{" "}
+                  |{" "}
+                  <a
+                    href="https://www.bseindia.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-gray-400"
                   >
                     BSE
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
-                    to="https://www.sebi.gov.in"
+                  <a
+                    href="https://www.sebi.gov.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-gray-400"
                   >
                     SEBI
-                  </Link>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://scores.sebi.gov.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-400"
+                  >
+                    SCORES
+                  </a>
                 </li>
               </ul>
             </div>
 
+            {/* Legal */}
             <div>
-              <h2 className="lg:text-md md:text-sm font-semibold mb-1 sm:mb-4">
-                Legal
-              </h2>
-              <ul className="space-y-0 sm:space-y-1">
+              <h2 className="text-md font-semibold mb-4">Legal</h2>
+              <ul className="space-y-1 text-[13px]">
                 <li>
                   <Link to="/privacy-policy" className="hover:text-gray-400">
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
-                  <a href="#refund">
-                    <button
-                      onClick={handleScrollToSection}
-                      className="hover:text-gray-400"
-                    >
-                      Refund Policy
-                    </button>
-                  </a>
-                </li>
 
                 <li>
                   <Link to="/terms" className="hover:text-gray-400">
-                    Terms & Conditions
+                    Terms & Uses Policy
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/disclaimer" className="hover:text-gray-400">
-                    Disclaimer
-                  </Link>
-                </li> */}
               </ul>
             </div>
           </div>
@@ -146,18 +160,20 @@ function Footer() {
         <div className="mx-auto px-2 pb-10 lg:px-32">
           <div className="my-2">
             <p className="text-[10px] sm:text-xs md:text-sm">
-              "Investment in securities are subject to various risks. Read all
-              the documents carefully & consult your financial advisor before
-              investing"
+              "Investment in securities are subject to market risk. Read all the
+              investment related documents carefully & consult your financial
+              advisor before investing"
             </p>
           </div>
           <div
-            className="xl:px-10 sm:px-5 px-2 py-1 rounded-lg border border-gunmetal cursor-pointer transition-all text-gunmetal bg-slate-50 hover:shadow-md"
+            className="xl:px-10 sm:px-5 px-2 py-1 rounded-lg border border-gray-300 cursor-pointer transition-all text-gunmetal bg-slate-50 hover:shadow-md"
             onClick={() => setIsOpen(!isOpen)} // Toggle the content
           >
             {/* Entire Card as One Block */}
             <div className="flex justify-between items-center">
-              <h3 className="text-xs md:text-lg font-bold">Disclaimer:</h3>
+              <h3 className="text-sm md:text-md lg:text-lg font-bold">
+                Disclaimer:
+              </h3>
 
               <span
                 className={`text-md md:text-lg font-bold transform transition-transform duration-300 ${
@@ -168,21 +184,13 @@ function Footer() {
               </span>
             </div>
 
-            {/* <div className="text-left py-1">
-              <p className="text-[8px] sm:text-xs md:text-sm">
-                "Investment in securities are subject to various risks. Read all
-                the documents carefully & consult your financial advisor before
-                investing"
-              </p>
-            </div> */}
-
             {/* Collapsible Content */}
             <div
-              className={`overflow-hidden transition-all text-xs ease-in-out ${
+              className={`overflow-hidden transition-all text-[10px] md:text-[11px] ease-in-out ${
                 isOpen ? "mt-4 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="space-y-2 text-justify">
+              <div className="space-y-2 text-justify break-words">
                 {/* Company Information */}
                 <div className="font-semibold space-y-2">
                   <p>
@@ -200,12 +208,8 @@ function Footer() {
                     primary market issues, Debt Market and financial products
                     like mutual funds and fixed deposits, Portfolio Management.
                   </p>
-                  {/* Legal Compliance */}
-                  <p>
-                    We are in process to register as a Research Analyst under
-                    SEBI (Research Analyst) Regulations, 2014.
-                  </p>
                 </div>
+                {/* Legal Compliance */}
                 <p>
                   We hereby declare that our activities were neither suspended
                   nor we have defaulted with any stock exchange authority with
@@ -236,25 +240,77 @@ function Footer() {
                   objectives, financial situations, or needs of individual
                   clients.
                 </p>
+
+                <p className="text-night">
+                  Tradzo uses charts powered by{" "}
+                  <a
+                    href="http://tradingview.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                  >
+                    TradingView
+                  </a>
+                  , under free licencing agreement with
+                  https://www.tradingview.com website.
+                </p>
+
+                <div className="py-2">
+                  <p className="font-semibold text-sm mb-2">Research Team</p>
+
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <li className="p-2 border text-[11px] border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+                      <p className="font-medium text-night">
+                        Mr. Harsh Patel, CFA L2
+                      </p>
+                      <p className="mt-1">
+                        <a
+                          href="mailto:harsh@tradzo.in"
+                          className="text-blue-600 hover:text-blue-800"
+                        >
+                          harsh@tradzo.in
+                        </a>
+                        <br />
+                        <span className="">+91 79 40391464</span>
+                      </p>
+                    </li>
+                    <li className="p-2 border border-gray-200 text-[11px] rounded-lg hover:shadow-lg transition-shadow">
+                      <p className="font-medium text-night">
+                        Mrs. Shweta Patel, PGDM in Banking & Finance
+                      </p>
+                      <p className="mt-1">
+                        <a
+                          href="mailto:shweta.patel@tradzo.in"
+                          className="text-blue-600 hover:text-blue-800"
+                        >
+                          shweta.patel@tradzo.in
+                        </a>
+                        <br />
+                        <span className="">+91 79 40391464</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <h2 className="text-xs font-semibold pt-2">About Research</h2>
                 <p>
-                  We have reviewed the report, and so far, as it includes
-                  current or historical information, it is believed to be
-                  reliable though its accuracy or completeness cannot be
-                  guaranteed. Neither Tradzo Technologies Private Limited, nor
-                  any person connected with it, accepts any liability arising
-                  from the use of this document. The recipients of this material
-                  should rely on their own investigations and take their own
-                  professional advice. The price and value of the investments
-                  referred to in this material may go up or down. Past
-                  performance is not a guide for future performance. Certain
-                  transactions -including those involving futures, options and
-                  other derivatives as well as non-investment grade securities -
-                  involve substantial risk and are not suitable for all
-                  investors. Reports based on technical analysis centers on
-                  studying charts of a stock's price movement and trading volume
-                  and are short-term in nature, as opposed to focusing on a
-                  company's fundamentals and as such, may not match with a
-                  report on a company's fundamentals & in long-term.
+                  Reports may include current or historical information, it is
+                  believed to be reliable though its accuracy or completeness
+                  cannot be guaranteed. Neither Tradzo Technologies Private
+                  Limited, nor any person connected with it, accepts any
+                  liability arising from the use of this document. The
+                  recipients of this material should rely on their own
+                  investigations and take their own professional advice. The
+                  price and value of the investments referred to in this
+                  material may go up or down. Past performance is not a guide
+                  for future performance. Certain transactions -including those
+                  involving futures, options and other derivatives as well as
+                  non-investment grade securities - involve substantial risk and
+                  are not suitable for all investors. Reports based on technical
+                  analysis centers on studying charts of a stock's price
+                  movement and trading volume and are short-term in nature, as
+                  opposed to focusing on a company's fundamentals and as such,
+                  may not match with a report on a company's fundamentals & in
+                  long-term.
                 </p>
                 <p>
                   Opinions expressed are our current opinions as of the date
@@ -524,6 +580,16 @@ function Footer() {
         <ul className="flex text-night justify-center space-x-4 text-2xl">
           <li>
             <a
+              href="https://x.com/hitradzo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400"
+            >
+              <FaXTwitter />
+            </a>
+          </li>
+          <li>
+            <a
               href="https://www.instagram.com/hitradzo"
               target="_blank"
               rel="noopener noreferrer"
@@ -540,16 +606,6 @@ function Footer() {
               className="hover:text-gray-400"
             >
               <FaFacebook />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://x.com/hitradzo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray-400"
-            >
-              <FaXTwitter />
             </a>
           </li>
           <li>
@@ -574,13 +630,63 @@ function Footer() {
           </li>
         </ul>
       </div>
-      <div className="py-4 mt-8">
-        <div className="container mx-auto px-6 lg:px-8 text-center">
-          <p className="text-sm text-black">
-            © 2024 Tradzo. All rights reserved.
-          </p>
+
+      <div className="py-6 bg-gray-100 mt-8">
+        <div className="container mx-auto px-6 lg:px-32 relative">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+            {/* Left Section */}
+            <div className="text-center lg:left-0">
+              <p className="text-[12px]">
+                Copyright © 2024 Tradzo Technologies Pvt Ltd. All rights
+                reserved.
+              </p>
+            </div>
+            {/* Right Section */}
+            <div className="text-center items-center lg:text-right">
+              <p className="text-[12px] flex items-center justify-center">
+                Charts are powered by&nbsp;
+                <a
+                  href="https://tradingview.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                >
+                  TradingView
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* <div className="py-6 bg-gray-100 mt-8">
+        <div className="container mx-auto px-6 lg:px-32 relative">
+          <div className="flex items-center justify-between relative">
+            Left Section
+            <div className="text-center xl:text-left">
+              <p className="text-[12px]">
+                Copyright © 2024 Tradzo Technologies Pvt Ltd. All rights
+                reserved.
+              </p>
+            </div>
+
+            Right Section
+            <div className="text-center xl:text-right">
+              <p className="text-[12px] flex items-center justify-center">
+                Charts are powered by
+                <a
+                  href="https://tradingview.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                >
+                  {"  "}TradingView
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </footer>
   );
 }

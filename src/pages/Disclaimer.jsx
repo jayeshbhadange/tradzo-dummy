@@ -2,49 +2,13 @@ import React from "react";
 
 function Disclaimer() {
   return (
-    <div className="bg-white text-gunmetal text-xs md:text-sm">
-      <div className="mx-auto text-justify mx-5 xl:mx-20 2xl:mx-32 px-4 sm:px-6 lg:px-16 py-4 sm:py-6 md:py-8">
+    <div className="bg-white text-gunmetal text-xs break-words md:text-[13px]">
+      <div className="mx-auto text-justify xl:mx-20 2xl:mx-32 px-4 sm:px-6 lg:px-16 py-4 sm:py-6 md:py-8">
         <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-semibold mb-2 sm:mb-4 md:mb-6">
           Disclaimer/Disclosures
         </h1>
 
         <div className="space-y-5 text-justify">
-          {/* Research Team Section */}
-          <div>
-            <p className="font-semibold text-lg md:text-xl lg:text-2xl mb-4">
-              RESEARCH TEAM
-            </p>
-            <ul className="space-y-3">
-              <li>
-                <p className="font-medium">Mr. Harsh Patel, CFA L2</p>
-                <p>
-                  <a
-                    href="mailto:harsh@tradzo.in"
-                    className="text-blue-600 hover:text-blue-800"
-                  >
-                    harsh@tradzo.in
-                  </a>
-                  <br />
-                  +91 79 40391464
-                </p>
-              </li>
-              <li>
-                <p className="font-medium">
-                  Mrs. Shweta Patel, PGDM in Banking & Finance
-                </p>
-                <p>
-                  <a
-                    href="mailto:shweta.patel@tradzo.in"
-                    className="text-blue-600 hover:text-blue-800"
-                  >
-                    shweta.patel@tradzo.in
-                  </a>
-                  <br />
-                  +91 79 40391464
-                </p>
-              </li>
-            </ul>
-          </div>
           {/* Company Information */}
           <p>
             Tradzo Technologies Private Limited is a DPIIT Recognized Start-Up,
@@ -52,21 +16,16 @@ function Disclaimer() {
           </p>
           {/* SEBI Registration Details */}
           <p>
-            Tradzo has Applied for SEBI Registration under SEBI RA Regulation
-            2014 for RA License, As per SEBI guidelines Tradzo has 6 months to
-            complete registration and can work as RA and do product trial runs.
-            Our businesses include Research on Financial Market Instruments &
-            Financial Market Trend, Providing and developing Investment &
-            trading related products, software applications & distribution
-            services rendered in connection with Equities Market, primary market
-            issues, Debt Market and financial products like mutual funds and
-            fixed deposits, Portfolio Management.
+            Tradzo is in process to apply for SEBI registrastion under SEBI RA
+            Regulation 2014 for RA License. Our businesses include Research on
+            Financial Market Instruments & Financial Market Trend, Providing and
+            developing Investment & trading related products, software
+            applications & distribution services rendered in connection with
+            Equities Market, primary market issues, Debt Market and financial
+            products like mutual funds and fixed deposits, Portfolio Management.
           </p>
           {/* Legal Compliance */}
-          <p>
-            We are registered as a Research Analyst under SEBI (Research
-            Analyst) Regulations, 2014.
-          </p>
+
           <p>
             We hereby declare that our activities were neither suspended nor we
             have defaulted with any stock exchange authority with whom we are
@@ -77,11 +36,12 @@ function Disclaimer() {
           </p>
 
           <p>
-            We offer our research services to clients as well as our prospects.
-            This document is not for public distribution and has been furnished
-            to you solely for your information and must not be reproduced or
-            redistributed to any other person. Persons into whose possession
-            this document may come are required to observe these restrictions.
+            We await SEBI approval to offer our research services to clients as
+            well as our prospects. This document is not for public distribution
+            and has been furnished to you solely for your information and must
+            not be reproduced or redistributed to any other person. Persons into
+            whose possession this document may come are required to observe
+            these restrictions.
           </p>
           {/* Liability Disclaimer */}
           <p>
@@ -95,23 +55,76 @@ function Disclaimer() {
             consider the particular investment objectives, financial situations,
             or needs of individual clients.
           </p>
+
+          <p className="py-3 text-night">
+            Tradzo uses charts powered by{" "}
+            <a
+              href="http://tradingview.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+            >
+              TradingView
+            </a>
+            , under free licencing agreement with https://www.tradingview.com
+            website.
+          </p>
+
+          <div className="p-4 rounded-lg shadow-md">
+            <p className="font-semibold text-sm mb-2">Research Team</p>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <li className="p-4 border text-[13px] border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+                <p className="font-medium text-night">
+                  Mr. Harsh Patel, CFA L2
+                </p>
+                <p className="mt-2">
+                  <a
+                    href="mailto:harsh@tradzo.in"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    harsh@tradzo.in
+                  </a>
+                  <br />
+                  <span className="">+91 79 40391464</span>
+                </p>
+              </li>
+              <li className="p-4 border border-gray-200  text-[13px] rounded-lg hover:shadow-lg transition-shadow">
+                <p className="font-medium text-night">
+                  Mrs. Shweta Patel, PGDM in Banking & Finance
+                </p>
+                <p className="mt-2">
+                  <a
+                    href="mailto:shweta.patel@tradzo.in"
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    shweta.patel@tradzo.in
+                  </a>
+                  <br />
+                  <span className="">+91 79 40391464</span>
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <h2 className="text-sm font-semibold mb-4">About Research</h2>
           <p>
-            We have reviewed the report, and so far, as it includes current or
-            historical information, it is believed to be reliable though its
-            accuracy or completeness cannot be guaranteed. Neither Tradzo
-            Technologies Private Limited, nor any person connected with it,
-            accepts any liability arising from the use of this document. The
-            recipients of this material should rely on their own investigations
-            and take their own professional advice. The price and value of the
-            investments referred to in this material may go up or down. Past
-            performance is not a guide for future performance. Certain
-            transactions -including those involving futures, options and other
-            derivatives as well as non-investment grade securities - involve
-            substantial risk and are not suitable for all investors. Reports
-            based on technical analysis centers on studying charts of a stock's
-            price movement and trading volume and are short-term in nature, as
-            opposed to focusing on a company's fundamentals and as such, may not
-            match with a report on a company's fundamentals & in long-term.
+            Reports may include current or historical information, it is
+            believed to be reliable though its accuracy or completeness cannot
+            be guaranteed. Neither Tradzo Technologies Private Limited, nor any
+            person connected with it, accepts any liability arising from the use
+            of this document. The recipients of this material should rely on
+            their own investigations and take their own professional advice. The
+            price and value of the investments referred to in this material may
+            go up or down. Past performance is not a guide for future
+            performance. Certain transactions -including those involving
+            futures, options and other derivatives as well as non-investment
+            grade securities - involve substantial risk and are not suitable for
+            all investors. Reports based on technical analysis centers on
+            studying charts of a stock's price movement and trading volume and
+            are short-term in nature, as opposed to focusing on a company's
+            fundamentals and as such, may not match with a report on a company's
+            fundamentals & in long-term.
           </p>
           <p>
             Opinions expressed are our current opinions as of the date appearing
@@ -236,7 +249,7 @@ function Disclaimer() {
             Subject company(ies) may have been client during twelve months
             preceding the date of distribution of the research report.
           </p>
-          <p>
+          <p className="">
             "A graph of daily closing prices of securities is available at{" "}
             <a
               href="https://www.nseindia.com/ChartApp/install/charts/mainpage.jsp"
@@ -356,6 +369,7 @@ function Disclaimer() {
           </p>
         </div>
       </div>
+      <div className="pb-32"></div>
     </div>
   );
 }
