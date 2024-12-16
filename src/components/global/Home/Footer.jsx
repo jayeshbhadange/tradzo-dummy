@@ -1,19 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
-// import logo from "../../../assets/logos-01.svg";
-import logo from "../../../assets/logowhite.png";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../../assets/Only Logo/Logo-01.svg";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaFacebook,
+  FaHeart,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 function Footer() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleScrollToSection = () => {
+    navigate("/terms");
+    setTimeout(() => {
+      const section = document.querySelector("refund");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
   return (
-    <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto px-6 lg:px-8">
-        {/* Logo and Intro */}
-        <div className="flex flex-col md:flex-row md:justify-between items-center text-center mb-8">
-          <div className="mb-6 md:mb-0">
-            <Link to="/" className="flex justify-center mx-auto">
-              <img src={logo} className="h-20 w-auto" alt="Logo" />
-            </Link>
-            <p className="mt-6 text-sm max-w-md">
+    <footer className="bg-slate-50 text-gunmetal py-16">
+      <div className="container sm:text-sm md:text-md text-xs mx-auto px-6 lg:px-1">
+        {/* Intro */}
+        <div className="flex flex-col gap-4 md:flex-row md:justify-between items-center text-center mb-8 lg:px-32">
+          {/* Left Text Section */}
+          <div className="md:flex-1">
+            <p className="text-[13px] lg:leading-6 text-justify">
               Tradzo Technologies creates platforms & investment products to
               invest in Indian Equities with more Transparency & Professional
               Approach. Our strategies are curated to provide actionable
@@ -21,14 +39,36 @@ function Footer() {
             </p>
           </div>
 
-          {/* Resource Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
+          {/* Logo Section */}
+          <div className="md:flex-1 flex flex-col items-center gap-2">
+            <Link to="/" className="flex justify-center">
+              <img
+                src={logo}
+                className="md:h-32 sm:h-16 h-12 w-auto"
+                alt="Logo"
+              />
+            </Link>
+
+            {/* Center Section with Love */}
+            <div className="md:py-5">
+              <p className="text-[12px] flex justify-center items-center">
+                Building in India with{" "}
+                <span className="ml-1">
+                  <FaHeart className="text-bs" />
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {/* Links Section */}
+          <div className="md:flex-1 grid grid-cols-3 gap-4">
+            {/* Company */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">Resources</h2>
-              <ul className="space-y-2">
+              <h2 className="text-md font-semibold mb-4">Company</h2>
+              <ul className="space-y-1 text-[13px]">
                 <li>
-                  <Link to="/home" className="hover:text-gray-400 link-padding">
-                    Home
+                  <Link to="/contact" className="hover:text-gray-400">
+                    Support
                   </Link>
                 </li>
                 <li>
@@ -36,96 +76,76 @@ function Footer() {
                     About
                   </Link>
                 </li>
-              </ul>
-            </div>
-
-            {/* Follow Us Links */}
-            <div>
-              <h2 className="text-lg font-semibold mb-4">Follow us</h2>
-              <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://m.facebook.com/HiTradzo"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:careers@tradzo.in"
                     className="hover:text-gray-400"
                   >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://x.com/hitradzo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-400"
-                  >
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://in.linkedin.com/company/tradzo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-400"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/hitradzo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-gray-400"
-                  >
-                    Instagram
+                    Careers
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Legal Links */}
+            {/* Resources */}
             <div>
-              <h2 className="text-lg font-semibold mb-4">Legal</h2>
-              <ul className="space-y-2">
+              <h2 className="text-md font-semibold mb-4">Resources</h2>
+              <ul className="space-y-1 text-[13px]">
                 <li>
-                  <Link to="/disclaimer" className="hover:text-gray-400">
+                  <a
+                    href="https://www.nseindia.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-400"
+                  >
+                    NSE
+                  </a>{" "}
+                  |{" "}
+                  <a
+                    href="https://www.bseindia.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-400"
+                  >
+                    BSE
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.sebi.gov.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-400"
+                  >
+                    SEBI
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://scores.sebi.gov.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-400"
+                  >
+                    SCORES
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h2 className="text-md font-semibold mb-4">Legal</h2>
+              <ul className="space-y-1 text-[13px]">
+                <li>
+                  <Link to="/privacy-policy" className="hover:text-gray-400">
                     Privacy Policy
                   </Link>
                 </li>
+
                 <li>
                   <Link to="/terms" className="hover:text-gray-400">
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/disclaimer" className="hover:text-gray-400">
-                    Disclaimer
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-gray-400">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company Links */}
-            <div>
-              <h2 className="text-lg font-semibold mb-4">Company</h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/about" className="hover:text-gray-400">
-                    About Us
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/offices" className="hover:text-gray-400">
-                    Our Offices
+                    Terms & Uses Policy
                   </Link>
                 </li>
               </ul>
@@ -133,193 +153,540 @@ function Footer() {
           </div>
         </div>
 
-        <hr className="border-gray-700 mb-6" />
+        <hr className="border-gray-700 my-6" />
 
-        {/* Social Media Links */}
-        <ul className="flex justify-center space-x-4">
-          {/* Facebook Icon */}
-          <li className="relative group">
-            <a
-              href="https://m.facebook.com/HiTradzo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-white text-blue-600 rounded-full shadow-md transition-transform transform hover:scale-110"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 48 48"
+        {/* Disclaimer Section */}
+
+        <div className="mx-auto px-2 pb-10 lg:px-32">
+          <div className="my-2">
+            <p className="text-[10px] sm:text-xs md:text-sm">
+              "Investment in securities are subject to market risk. Read all the
+              investment related documents carefully & consult your financial
+              advisor before investing"
+            </p>
+          </div>
+          <div
+            className="xl:px-10 sm:px-5 px-2 py-1 rounded-lg border border-gray-300 cursor-pointer transition-all text-gunmetal bg-slate-50 hover:shadow-md"
+            onClick={() => setIsOpen(!isOpen)} // Toggle the content
+          >
+            {/* Entire Card as One Block */}
+            <div className="flex justify-between items-center">
+              <h3 className="text-sm md:text-md lg:text-lg font-bold">
+                Disclaimer:
+              </h3>
+
+              <span
+                className={`text-md md:text-lg font-bold transform transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
               >
-                <path
-                  fill="#2aa4f4"
-                  d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4z"
-                />
-                <path
-                  fill="#fff"
-                  d="M26.707 29.301h5.176l.813-5.258h-5.989v-2.874c0-2.184.714-4.121 2.757-4.121h3.283v-5.464c-.577-.078-1.797-.248-4.102-.248-4.814 0-7.636 2.542-7.636 8.334v3.498H16.06v5.258h4.948v14.452C21.988 43.9 22.981 44 24 44c.921 0 1.82-.084 2.707-.204V29.301z"
-                />
-              </svg>
-            </a>
-            <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
-              Facebook
-            </span>
-          </li>
+                <IoIosArrowDropdownCircle />
+              </span>
+            </div>
 
-          {/* Youtube Icon */}
-          <li className="relative group">
-            <a
-              href="https://youtube.com/@hitradzo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-white text-red-600 rounded-full shadow-md transition-transform transform hover:scale-110"
+            {/* Collapsible Content */}
+            <div
+              className={`overflow-hidden transition-all text-[10px] md:text-[11px] ease-in-out ${
+                isOpen ? "mt-4 opacity-100" : "max-h-0 opacity-0"
+              }`}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  fill="#FF3D00"
-                  d="M43.2 33.9c-.4 2.1-2.1 3.7-4.2 4-3.3.5-8.8 1.1-15 1.1-6.1 0-11.6-.6-15-1.1-2.1-.3-3.8-1.9-4.2-4C4.4 31.6 4 28.2 4 24c0-4.2.4-7.6.8-9.9.4-2.1 2.1-3.7 4.2-4 3.3-.5 8.8-1.1 15-1.1s11.6.6 15 1.1c2.1.3 3.8 1.9 4.2 4 .4 2.3.9 5.7.9 9.9-.4 4.2-.8 7.6-1.2 9.9z"
-                />
-                <path fill="#FFF" d="M20 31V17l12 7z" />
-              </svg>
-            </a>
-            <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
-              YouTube
-            </span>
-          </li>
+              <div className="space-y-2 text-justify break-words">
+                {/* Company Information */}
+                <div className="font-semibold space-y-2">
+                  <p>
+                    Tradzo Technologies Private Limited is a DPIIT Recognized
+                    Start-Up, incorporated in May 2023.
+                  </p>
+                  {/* SEBI Registration Details */}
+                  <p>
+                    Tradzo is in process to apply for SEBI registrastion under
+                    SEBI RA Regulation 2014 for RA License. Our businesses
+                    include Research on Financial Market Instruments & Financial
+                    Market Trend, Providing and developing Investment & trading
+                    related products, software applications & distribution
+                    services rendered in connection with Equities Market,
+                    primary market issues, Debt Market and financial products
+                    like mutual funds and fixed deposits, Portfolio Management.
+                  </p>
+                </div>
+                {/* Legal Compliance */}
+                <p>
+                  We hereby declare that our activities were neither suspended
+                  nor we have defaulted with any stock exchange authority with
+                  whom we are registered in last five years. We have not been
+                  debarred from doing business by any Stock Exchange / SEBI or
+                  any other authorities; nor has our certificate of registration
+                  been cancelled by SEBI at any point of time.
+                </p>
 
-          {/* Twitter Icon */}
-          <li className="relative group">
+                <p>
+                  We await SEBI approval to offer our research services to
+                  clients as well as our prospects. This document is not for
+                  public distribution and has been furnished to you solely for
+                  your information and must not be reproduced or redistributed
+                  to any other person. Persons into whose possession this
+                  document may come are required to observe these restrictions.
+                </p>
+                {/* Liability Disclaimer */}
+                <p>
+                  This material is for the personal information of the
+                  authorized recipient, and we are not soliciting any action
+                  based upon it. This report is not to be construed as an offer
+                  to sell or the solicitation of an offer to buy any security in
+                  any jurisdiction where such an offer or solicitation would be
+                  illegal. It is for the general information of clients of
+                  Tradzo Technologies Private Limited. It does not constitute a
+                  personal recommendation or consider the particular investment
+                  objectives, financial situations, or needs of individual
+                  clients.
+                </p>
+
+                <p className="text-night">
+                  Tradzo uses charts powered by{" "}
+                  <a
+                    href="http://tradingview.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                  >
+                    TradingView
+                  </a>
+                  , under free licencing agreement with
+                  https://www.tradingview.com website.
+                </p>
+
+                <div className="py-1">
+                  <p className="font-semibold text-sm mb-2">Research Team</p>
+
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <li className="p-2 border text-[11px] border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+                      <p className="font-medium text-night">
+                        Mr. Harsh Patel, CFA L2
+                      </p>
+                      <p className="mt-1">
+                        <a
+                          href="mailto:harsh@tradzo.in"
+                          className="text-blue-600 hover:text-blue-800"
+                        >
+                          harsh@tradzo.in
+                        </a>
+                        <br />
+                        <span className="">+91 79 40391464</span>
+                      </p>
+                    </li>
+                    <li className="p-2 border border-gray-200 text-[11px] rounded-lg hover:shadow-lg transition-shadow">
+                      <p className="font-medium text-night">
+                        Mrs. Shweta Patel, PGDM in Banking & Finance
+                      </p>
+                      <p className="mt-1">
+                        <a
+                          href="mailto:shweta.patel@tradzo.in"
+                          className="text-blue-600 hover:text-blue-800"
+                        >
+                          shweta.patel@tradzo.in
+                        </a>
+                        <br />
+                        <span className="">+91 79 40391464</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <h2 className="text-xs font-semibold">About Research</h2>
+                <p>
+                  Reports may include current or historical information, it is
+                  believed to be reliable though its accuracy or completeness
+                  cannot be guaranteed. Neither Tradzo Technologies Private
+                  Limited, nor any person connected with it, accepts any
+                  liability arising from the use of this document. The
+                  recipients of this material should rely on their own
+                  investigations and take their own professional advice. The
+                  price and value of the investments referred to in this
+                  material may go up or down. Past performance is not a guide
+                  for future performance. Certain transactions -including those
+                  involving futures, options and other derivatives as well as
+                  non-investment grade securities - involve substantial risk and
+                  are not suitable for all investors. Reports based on technical
+                  analysis centers on studying charts of a stock's price
+                  movement and trading volume and are short-term in nature, as
+                  opposed to focusing on a company's fundamentals and as such,
+                  may not match with a report on a company's fundamentals & in
+                  long-term.
+                </p>
+                <p>
+                  Opinions expressed are our current opinions as of the date
+                  appearing in this material only. While we endeavor to update
+                  on a reasonable basis the information discussed in this
+                  material, there may be regulatory, compliance or other reasons
+                  that prevent us from doing so. Prospective investors and
+                  others are cautioned that any forward-looking statements are
+                  not predictions and may be subject to change without notice.
+                  Our proprietary trading and investment businesses may make
+                  investment decisions that are inconsistent with the
+                  recommendations expressed herein. Tradzo Technologies Private
+                  Limited has independent equity research. This report has been
+                  prepared by Tradzo Technologies Private Limited.
+                </p>
+                <p>
+                  We and our affiliates/associates, officers, directors, and
+                  employees, Research Analyst(including relatives) worldwide
+                  may: (a) from time to time, have long or short positions in,
+                  and buy or sell the securities thereof, of company (ies)
+                  mentioned herein or (b) be engaged in any other transaction
+                  involving such securities and earn brokerage or other
+                  compensation or act as a market maker in the financial
+                  instruments of the subject company/companies discussed herein
+                  or act as advisor or lender / borrower to such company (ies)
+                  or have other potential/material conflict of interest with
+                  respect to any recommendation and related information and
+                  opinions at the time of publication of Research Report or at
+                  the time of public appearance. Tradzo Technologies Private
+                  Limited may have a proprietary long/short position in the
+                  above-mentioned scrip(s) and therefore may be considered as
+                  interested. The views provided herein are general in nature
+                  and do not consider the risk appetite or investment objective
+                  of particular investor; readers are requested to take
+                  independent professional advice before investing. This should
+                  not be construed as an invitation or solicitation to do
+                  business with Tradzo. Tradzo Technologies Private Limited does
+                  not provide any promise or assurance of favorable view for a
+                  particular industry or sector or business group in any manner.
+                  The investor is requested to take into consideration all the
+                  risk factors including their financial condition, suitability
+                  to risk return profile and take professional advice before
+                  investing, our research recommendations are standardized based
+                  on back-tested strategies and given with Stop-loss. All these
+                  recommendations are based on the probability of success. Every
+                  recommendation has a somewhat probability of failure, thus
+                  investor must follow stop-loss to avoid uncomfortable loss
+                  scenarios.
+                </p>
+                <p>
+                  The analyst for this report certifies that all the views
+                  expressed in this report accurately reflect his or her
+                  personal views about the subject company or companies and its
+                  or their securities, and no part of his or her compensation
+                  was, is or will be, directly or indirectly related to specific
+                  recommendations or views expressed in this report.
+                </p>
+                <p>
+                  No part of this material may be duplicated in any form and/or
+                  redistributed without Tradzo Technologies Private Limited’s
+                  prior written consent.
+                </p>
+                <p>
+                  We may have received compensation from the subject
+                  company(ies) in the past 12 months. No
+                </p>
+                <p>
+                  We may have managed or co-managed public offering of
+                  securities for the subject company(ies) in the past 12 months:
+                  No
+                </p>
+                <p>
+                  We may have received compensation for investment banking or
+                  merchant banking or brokerage services from the subject
+                  company(ies) in the past 12 months. We or our associates may
+                  have received any compensation for products or services other
+                  than investment banking or merchant banking or brokerage
+                  services from the subject company(ies) in the past 12 months.
+                  We or our associates may have received compensation or other
+                  benefits from the subject company(ies) or third party in
+                  connection with the research report. Our associates may have
+                  financial interest in the subject company(ies).
+                </p>
+                <p>
+                  Research Analyst or his/her relative's financial interest in
+                  the subject company(ies): No
+                </p>
+                <p>
+                  Tradzo Technologies Private Limited has financial interest in
+                  the subject company(ies) at the end of the month immediately
+                  preceding the date of publication of Research Report: No
+                </p>
+                <p>
+                  "However, Tradzo Technologies Private Limited Prop/Arbitrage
+                  team could have exposure/financial interest to the subject
+                  company/companies during the ongoing month." Nature of
+                  financial interest is holding of equity shares or derivatives
+                  of the subject company.
+                </p>
+                <p>
+                  Our associates may have actual/beneficial ownership of less
+                  than 1% securities of the subject company(ies) at the end of
+                  the month immediately preceding the date of publication of
+                  Research Report.
+                </p>
+                <p>
+                  Research Analyst or his/her relatives has actual/beneficial
+                  ownership of 1% or more securities of the subject company(ies)
+                  at the end of the month immediately preceding the date of
+                  publication of Research Report: No.
+                </p>
+                <p>
+                  Tradzo Technologies Private Limited has actual/beneficial
+                  ownership of 1% or more securities of the subject company(ies)
+                  at the end of the month immediately preceding the date of
+                  publication of Research Report: No
+                </p>
+                <p>
+                  By referring to any particular sector, Tradzo Technologies
+                  Private Limited does not provide any promise or assurance of
+                  favorable view for a particular industry or sector or business
+                  group in any manner. The investor is requested to take into
+                  consideration all the risk factors including their financial
+                  condition, suitability to risk return profile and take
+                  professional advice before investing. Such representations are
+                  not indicative of future results.
+                </p>
+                <p>
+                  Subject company(ies) may have been client during twelve months
+                  preceding the date of distribution of the research report.
+                </p>
+                <p>
+                  "A graph of daily closing prices of securities is available at{" "}
+                  <a
+                    href="https://www.nseindia.com/ChartApp/install/charts/mainpage.jsp"
+                    className="text-blue-700"
+                  >
+                    https://www.nseindia.com/ChartApp/install/charts/mainpage.jsp
+                  </a>
+                  {""} and{" "}
+                  <a
+                    href="http://economictimes.indiatimes.com/markets/stocks/stock-quotes"
+                    className="text-blue-700"
+                  >
+                    http://economictimes.indiatimes.com/markets/stocks/stock-quotes
+                  </a>
+                  . Choose a company from the list on the browser and select the
+                  "three years" icon in the price chart."
+                </p>
+                <p>
+                  Our research should not be considered as an advertisement or
+                  personal advice, it is professional & thus follow a standard
+                  approach. The investor is requested to take into consideration
+                  all the risk factors including their financial condition,
+                  suitability to risk return profile and the like and take
+                  professional advice before investing.
+                </p>
+                <p>
+                  Investments in the securities market are subject to market
+                  risks. Read all the related documents carefully before
+                  investing.
+                </p>
+                <p>
+                  Registration granted by SEBI and certification from NISM in no
+                  way guarantee performance of the intermediary or provide any
+                  assurance of returns to investors.
+                </p>
+                <p>
+                  Derivatives are a sophisticated investment device. The
+                  investor is requested to take into consideration all the risk
+                  factors before actually trading in derivative contracts.
+                  Compliance Officer Details: Mrs. Shweta Patel. Call: 079 -
+                  4039 1464, or Email:{" "}
+                  <a href="mailto:care@tradzo.in" className="text-blue-700">
+                    care@tradzo.in
+                  </a>
+                  .
+                </p>
+                <p>Tradzo Technologies Private Limited.</p>
+                <p>
+                  Registered Office: A-416 SUMEL11, NAMASTE CIRCLE, SHAHIBAUG,
+                  AHMEDABAD, GUJARAT 380004. CIN: , Telephone No.: +079
+                  40391464. Website:{" "}
+                  <a href="www.tradzo.in" className="text-blue-700">
+                    www.tradzo.in {"."}
+                  </a>
+                </p>
+                <p>
+                  Correspondence Address: A-416 SUMEL11, NAMASTE CIRCLE,
+                  SHAHIBAUG, AHMEDABAD, GUJARAT 380004. Telephone No: 42856825.
+                  SEBI Registration No: (_)
+                </p>
+                <p>
+                  In case you require any clarification or have any
+                  query/concern, kindly write to us at{" "}
+                  <a href="mailto:care@tradzo.in" className="text-blue-700">
+                    care@tradzo.in
+                  </a>
+                  . For grievances, contact{" "}
+                  <a
+                    href="mailto:shweta.patel@tradzo.in"
+                    className="text-blue-700"
+                  >
+                    shweta.patel@tradzo.in
+                  </a>
+                  . For escalation, contact{" "}
+                  <a href="mailto:harsh@tradzo.in" className="text-blue-700">
+                    harsh@tradzo.in
+                  </a>
+                  .
+                </p>
+                {/* Investor Complaints */}
+                <p>
+                  In absence of response/complaint not addressed to your
+                  satisfaction, you may lodge a complaint with SEBI at {""}
+                  <a
+                    href="https://scores.gov.in/scores/Welcome.html"
+                    className="text-blue-700"
+                  >
+                    https://scores.gov.in/scores/Welcome.html
+                  </a>
+                  {""} or Exchange at {""}
+                  <a
+                    href="https://investorhelpline.nseindia.com/NICEPLUS/"
+                    className="text-blue-700"
+                  >
+                    https://investorhelpline.nseindia.com/NICEPLUS/
+                  </a>
+                  , {""}
+                  <a
+                    href="https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx"
+                    className="text-blue-700"
+                  >
+                    https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx
+                  </a>
+                  . Investor Service Centre | National Commodity & Derivatives
+                  Exchange Limited (ncdex.com), {""}
+                  <a
+                    href="https://igrs.mcxindia.com/"
+                    className="text-blue-700"
+                  >
+                    https://igrs.mcxindia.com/
+                  </a>
+                  . Please quote your Service Ticket/Complaint Ref No. while
+                  raising your complaint at SEBI SCORES/Exchange portal or
+                  Depository at {""}
+                  <a
+                    href="https://www.epass.nsdl.com/complaints/websitecomplaints.aspx"
+                    className="text-blue-700"
+                  >
+                    https://www.epass.nsdl.com/complaints/websitecomplaints.aspx
+                  </a>
+                  {""} and {""}
+                  <a
+                    href="https://www.cdslindia.com/Footer/grievances"
+                    className="text-blue-700"
+                  >
+                    https://www.cdslindia.com/Footer/grievances
+                  </a>
+                  .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul className="flex text-night justify-center space-x-4 text-2xl">
+          <li>
             <a
               href="https://x.com/hitradzo"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-white text-blue-400 rounded-full shadow-md transition-transform transform hover:scale-110"
+              className="hover:text-gray-400"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  fill="#03A9F4"
-                  d="M42 12.3c-1.4.6-2.9 1-4.4 1.2 1.6-1 2.8-2.6 3.4-4.5-1.5.9-3.2 1.5-4.9 1.9-1.4-1.5-3.4-2.4-5.6-2.4-4.3 0-7.8 3.6-7.8 7.8 0 .6.1 1.3.2 1.8-6.5-.3-12.2-3.4-16-8.1-.7 1.2-1 2.5-1 4 0 2.7 1.4 5 3.4 6.4-1.3-.1-2.5-.4-3.6-.9v.1c0 3.8 2.7 6.9 6.3 7.7-.7.2-1.5.2-2.2.2-.5 0-1.1 0-1.6-.1 1.1 3.3 4.2 5.6 7.8 5.7-2.9 2.2-6.6 3.5-10.5 3.5-.7 0-1.5 0-2.2-.1 3.7 2.4 8 3.8 12.7 3.8 15.2 0 23.5-12.5 23.5-23.5 0-.4 0-.7 0-1.1 1.7-1.1 3.2-2.6 4.3-4.2z"
-                />
-              </svg>
+              <FaXTwitter />
             </a>
-            <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
-              Twitter
-            </span>
           </li>
-
-          {/* LinkedIn Icon */}
-          <li className="relative group">
-            <a
-              href="https://in.linkedin.com/company/tradzo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-white text-blue-700 rounded-full shadow-md transition-transform transform hover:scale-110"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 48 48"
-              >
-                <path
-                  fill="#0288D1"
-                  d="M42 4H6c-1.1 0-2 .9-2 2v36c0 1.1.9 2 2 2h36c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"
-                />
-                <path
-                  fill="#FFF"
-                  d="M12 19h5v18h-5V19zm2.5-8c1.6 0 2.5 1.1 2.5 2.5S16.1 16 14.5 16 12 14.9 12 13.5 13.4 11 14.5 11zm6 8h5v2.4h.1c.7-1.2 2.3-2.5 4.7-2.5 5 0 5.9 3.3 5.9 7.7V37h-5v-9.5c0-2.2-.8-3.7-2.8-3.7-2.1 0-3.2 1.5-3.2 3.7V37h-5V19z"
-                />
-              </svg>
-            </a>
-            <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
-              LinkedIn
-            </span>
-          </li>
-
-          {/* Instagram Icon */}
-          <li className="relative group">
+          <li>
             <a
               href="https://www.instagram.com/hitradzo"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-md transition-transform transform hover:scale-110"
+              className="hover:text-gray-400"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="24"
-                height="24"
-                viewBox="0 0 48 48"
-              >
-                <radialGradient
-                  id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1"
-                  cx="19.38"
-                  cy="42.035"
-                  r="44.899"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0" stopColor="#fd5" />
-                  <stop offset=".328" stopColor="#ff543f" />
-                  <stop offset=".348" stopColor="#fc5245" />
-                  <stop offset=".504" stopColor="#e64771" />
-                  <stop offset=".643" stopColor="#d53e91" />
-                  <stop offset=".761" stopColor="#cc39a4" />
-                  <stop offset=".841" stopColor="#c837ab" />
-                </radialGradient>
-                <path
-                  fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)"
-                  d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20C42.014,38.383,38.417,41.986,34.017,41.99z"
-                />
-                <radialGradient
-                  id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2"
-                  cx="11.786"
-                  cy="5.54"
-                  r="29.813"
-                  gradientTransform="matrix(1 0 0 .6663 0 1.849)"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0" stopColor="#4168c9" />
-                  <stop offset=".999" stopColor="#4168c9" stopOpacity="0" />
-                </radialGradient>
-                <path
-                  fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)"
-                  d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20C42.014,38.383,38.417,41.986,34.017,41.99z"
-                />
-                <path
-                  fill="#fff"
-                  d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"
-                />
-                <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
-                <path
-                  fill="#fff"
-                  d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
-                />
-              </svg>
+              <FaInstagram />
             </a>
-            <span className="absolute bottom-full mb-2 hidden group-hover:block bg-white text-black text-sm py-1 px-2 rounded shadow-md">
-              Instagram
-            </span>
+          </li>
+          <li>
+            <a
+              href="https://m.facebook.com/HiTradzo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400"
+            >
+              <FaFacebook />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://youtube.com/@hitradzo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400"
+            >
+              <FaYoutube />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://in.linkedin.com/company/tradzo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400"
+            >
+              <FaLinkedin />
+            </a>
           </li>
         </ul>
       </div>
-      <div className="bg-gray-800 py-4 mt-8">
-        <div className="container mx-auto px-6 lg:px-8 text-center">
-          <p className="text-sm text-gray-400">
-            © 2024 Tradzo. All rights reserved.
-          </p>
+
+      <div className="py-6 bg-gray-100 mt-8">
+        <div className="container mx-auto px-6 lg:px-32 relative">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+            {/* Left Section */}
+            <div className="text-center lg:left-0">
+              <p className="text-[12px]">
+                Copyright © 2024 Tradzo Technologies Pvt Ltd. All rights
+                reserved.
+              </p>
+            </div>
+            {/* Right Section */}
+            <div className="text-center items-center lg:text-right">
+              <p className="text-[12px] flex items-center justify-center">
+                Charts are powered by&nbsp;
+                <a
+                  href="https://tradingview.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                >
+                  TradingView
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* <div className="py-6 bg-gray-100 mt-8">
+        <div className="container mx-auto px-6 lg:px-32 relative">
+          <div className="flex items-center justify-between relative">
+            Left Section
+            <div className="text-center xl:text-left">
+              <p className="text-[12px]">
+                Copyright © 2024 Tradzo Technologies Pvt Ltd. All rights
+                reserved.
+              </p>
+            </div>
+
+            Right Section
+            <div className="text-center xl:text-right">
+              <p className="text-[12px] flex items-center justify-center">
+                Charts are powered by
+                <a
+                  href="https://tradingview.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 font-medium hover:text-blue-700 transition-all"
+                >
+                  {"  "}TradingView
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </footer>
   );
 }

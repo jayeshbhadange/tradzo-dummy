@@ -1,58 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap"); */
+/* @import url("https://fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900"); */
+/* @import url("https://fonts.cdnfonts.com/css/gilroy-bold"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
+/* .marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+} */
+
+@layer base {
+  body {
+    @apply tracking-wide;
+  }
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./src/assets/font/gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ag-theme-alpine .ag-paging-panel {
+  font-size: 10px; /* Adjust the font size */
+  padding: 4px 8px; /* Reduce padding for compactness */
+  height: 30px; /* Adjust height of pagination panel */
+  display: flex;
+  align-items: center; /* Center align text and controls */
+}
+
+.ag-theme-alpine .ag-paging-button {
+  height: 20px; /* Adjust button height */
+  font-size: 10px; /* Adjust button font size */
+}
+
+body {
+  /* font-family: "Gilroy", sans-serif; */
+  /* font-weight: 500; */
+  font-family: "Inter", Helvetica;
+
+  /* font-family: "", "Courier New", Courier, monospace; */
+
+  /* font-family: "Calibri"; */
+
+  /* letter-spacing: 0.05em; Adjust the value as needed */
+}
+
+.swiper-pagination {
+  position: relative;
+  bottom: -20px;
+}
+
+.header-wrap {
+  white-space: normal;
+  line-height: 1.2;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.cell-wrap {
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.5;
+}
 
 .App {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; 
-    padding: 1rem 0.5rem;
-  } 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem 0.5rem;
+}
+
 .instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
 }
 
 .instructions > svg {
-    margin-right: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .offscreen {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .valid {
-    color: limegreen;
-    margin-left: 0.25rem;
+  color: limegreen;
+  margin-left: 0.25rem;
 }
 
 .invalid {
-    color: red;
-    margin-left: 0.25rem;
+  color: red;
+  margin-left: 0.25rem;
 }
 
 .errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .line {
-    display: inline-block;
+  display: inline-block;
 }
