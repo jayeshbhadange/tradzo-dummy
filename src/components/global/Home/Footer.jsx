@@ -31,7 +31,7 @@ function Footer() {
         <div className="flex flex-col gap-4 md:flex-row md:justify-between items-center text-center mb-8 lg:px-32">
           {/* Left Text Section */}
           <div className="md:flex-1">
-            <p className="text-[13px] leading-6 text-justify">
+            <p className="text-[13px] lg:leading-6 text-justify">
               Tradzo Technologies creates platforms & investment products to
               invest in Indian Equities with more Transparency & Professional
               Approach. Our strategies are curated to provide actionable
@@ -54,7 +54,7 @@ function Footer() {
               <p className="text-[12px] flex justify-center items-center">
                 Building in India with{" "}
                 <span className="ml-1">
-                  <FaHeart className="text-red-500" />
+                  <FaHeart className="text-bs" />
                 </span>
               </p>
             </div>
@@ -255,7 +255,7 @@ function Footer() {
                   https://www.tradingview.com website.
                 </p>
 
-                <div className="py-2">
+                <div className="py-1">
                   <p className="font-semibold text-sm mb-2">Research Team</p>
 
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -291,7 +291,7 @@ function Footer() {
                     </li>
                   </ul>
                 </div>
-                <h2 className="text-xs font-semibold pt-2">About Research</h2>
+                <h2 className="text-xs font-semibold">About Research</h2>
                 <p>
                   Reports may include current or historical information, it is
                   believed to be reliable though its accuracy or completeness

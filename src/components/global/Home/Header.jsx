@@ -49,14 +49,14 @@ function Header() {
   };
 
   return (
-    <header className="bg-white text-left h-12 lg:h-12 shadow sticky top-0 z-50 text-gunmetal">
+    <header className="bg-white text-left h-15 md:h-12 shadow sticky top-0 z-50 text-gunmetal">
       <nav className="px-4 lg:px-6 mx-auto">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
               src={logo}
-              className="items-left w-auto mt-2 h-8 sm:h-8"
+              className="items-left w-auto my-2 h-10 md:h-8"
               alt="Logo"
             />
           </Link>
@@ -156,7 +156,7 @@ function Header() {
       {/* Mobile Sidebar */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-black/60 lg:hidden">
-          <div className="absolute top-0 right-0 w-[60%] sm:w-[40%] bg-white h-full shadow-md">
+          <div className="absolute top-0 right-0 w-full sm:w-[40%] bg-white h-full shadow-md">
             <div className="p-4">
               <AiOutlineClose
                 className="text-2xl ml-auto cursor-pointer"

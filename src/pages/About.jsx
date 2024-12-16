@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import founder1 from "../assets/icons/founder11.jpeg";
 import founder2 from "../assets/icons/founder22.jpeg";
 import { FaXTwitter } from "react-icons/fa6";
@@ -10,7 +10,7 @@ const About = () => {
     <section className="py-12 sm:py-12 md:py-16 text-gunmetal bg-white">
       <div className="container px-4 sm:px-6 md:px-10 lg:px-40 mx-auto">
         {/* Header Section */}
-        <h1 className="tracking-wide leading-1 text-2xl sm:text-4xl lg:text-5xl font-semibold text-center text-bs mb-2 sm:mb-8 md:mb-12">
+        <h1 className="tracking-wide leading-1 text-xl sm:text-2xl lg:text-4xl font-semibold text-center text-bs mb-2 sm:mb-8 md:mb-12">
           Building India's Most Transparent Trading and Investment Advisory
           Platform
         </h1>
