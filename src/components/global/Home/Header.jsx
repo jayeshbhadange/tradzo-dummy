@@ -156,7 +156,7 @@ function Header() {
       {/* Mobile Sidebar */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-black/60 lg:hidden">
-          <div className="absolute top-0 right-0 w-full sm:w-[40%] bg-white h-full shadow-md">
+          <div className="absolute top-0 right-0 w-[50%] sm:w-[40%] bg-white h-full shadow-md">
             <div className="p-4">
               <AiOutlineClose
                 className="text-2xl ml-auto cursor-pointer"
